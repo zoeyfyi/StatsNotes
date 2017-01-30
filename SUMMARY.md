@@ -20,7 +20,7 @@
 ## SS4
 
 * [Combination of random varibles](ss4/combination-of-random-varibles.md)
-* Approximating distributions
+* [Approximating distributions](ss4/approximating-distributions.md)
 * [t-distribution](ss4/t-distribution.md)
 * [Test for proportion/mean of poisson distriution](ss4/test-for-proportionmean-of-poisson-distriution.md)
 
