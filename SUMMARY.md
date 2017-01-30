@@ -11,6 +11,7 @@
 
 ## SS3
 
+* [Contingency tables](ss3/contingency-tables.md)
 * [The sign test](ss3/the-sign-test.md)
 * [Wilcoxon signed-rank test](/ss3/wilcoxon-signed-rank-test.md#wilcoxon-signed-rank-test)
 * [Mann-Whitney U test](ss3/mann-whitney-u-test.md)
