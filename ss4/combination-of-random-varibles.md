@@ -1,6 +1,6 @@
 ## Combination of random variables
 
-Using the following rules from before, given that $X$ and $Y$ are independent random variables:
+Using the following rules from before, given that $$X$$ and $$Y$$ are independent random variables:
 $$\operatorname{E}(aX \pm bY) = a\operatorname{E}(X) \pm b\operatorname{E}(Y)$$
 $$\operatorname{Var}(aX \pm bY) = a^2\operatorname{Var}(X) + b^2\operatorname{Var}(Y)$$
 
