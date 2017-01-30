@@ -11,12 +11,12 @@ Trains from 3 stations leave late or on-time, test at 5% is their is any associa
 | C | 44 | 26 |
 
 Hypothesis
-$H_0$: No association
-$H_1$: Association
+$$H_0$$: No association
+$$H_1$$: Association
 
-Calculate the expected and $\chi^2$ values
+Calculate the expected and $$\chi^2$$ values
 
-| $O_i$ | $E_i$ | $\frac{(O_i - E_i)^2}{E_i}$ |
+| $$O_i$$ | $$E_i$$ | $$\frac{(O_i - E_i)^2}{E_i}$$ |
 | --- | --- | --- |
 | 26 | $\frac{80}{3}$ | $\frac{1}{60}$ |
 | 30 | $\frac{80}{3}$ | $\frac{5}{12}$ |
