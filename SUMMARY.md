@@ -3,7 +3,8 @@
 ## SS1
 
 * [Introduction](README.md)
-* [Standard error of the mean](standard-error-of-the-mean.md)
+* [Statistics](statistics.md)
+* [Estimators](standard-error-of-the-mean.md)
 
 ## SS2
 
