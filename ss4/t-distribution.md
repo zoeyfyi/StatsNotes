@@ -19,7 +19,7 @@ $$
 \end{align}
 $$
 
-### Hypothesis test for mean of normal distribution
+### Hypothesis test for mean of normal distribution with unknown varience
 Let $$n = 20$$, $$\sum{x} = 21.7$$, $$\sum{x^2} = 28.4$$, $$H_0: \mu = 1.00$$, $$H_1: \mu > 1.00$$. Test the hypothesis at a 10% significance level
 
 Sample mean and estimator of variance

@@ -20,8 +20,13 @@
 * [Combination of random varibles](ss4/combination-of-random-varibles.md)
 * Approximating distributions
 * [t-distribution](ss4/t-distribution.md)
+* Test for proportion/mean of poisson distriution
 
 ## SS5
+
+* [Rectangular and Exponential distributions](ss5/rectangular-and-exponential-distributions.md)
+* Variance on a sample of a normal distribution
+* [Goodness of fit tests](ss5/goodness-of-fit-tests.md)
 
 ## SS6
 
