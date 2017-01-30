@@ -1,13 +1,15 @@
 ## Sign test
-The sign test is a **distribution free** test since it doesn't require the data to follow a particular distribution. Its also very simple, just find the sign of the difference ignoring any pairs that are equal. Then use $$P(X < min(a, b)| X \sim B(n, \frac{1}{2})$$ where $$a$$ and $$b$$ are the number of each sign and n is number of all valid signs (not Nan). This tests the median value of the data.
+
+The sign test is a **distribution free** test since it doesn't require the data to follow a particular distribution. Its also very simple, just find the sign of the difference ignoring any pairs that are equal. Then use $$P(X < min(a, b)| X \sim B(n, \frac{1}{2})$$ where $$a$$ and $$b$$ are the number of each sign and n is number of all valid signs \(not Nan\). This tests the median value of the data.
 
 #### Example
 
 Data is collected about driver and passenger injury's. Test at 5% significance weather these are related.
 
 ###### Hypothesis
-$$H_0$$: Driver injury $$=$$ Passenger injury
-$$H_1$$: Driver injury $$\ne$$ Passenger injury
+
+$$H_0$$: Population mean diffrence $$\eta\_d = 0$$  
+$$H_1$$: Driver injury $$\ne$$ Passenger injury $$\eta\_d \neq 0$$
 
 ###### Signs
 
@@ -33,6 +35,8 @@ $$H_1$$: Driver injury $$\ne$$ Passenger injury
 | 18 | 42 | 42 | Nan |
 
 ###### Test statistic
+
+
 $$
 X \sim B(18-2, \frac{1}{2})\\
 \begin{align}
@@ -43,5 +47,8 @@ b &= P(X < min(3, 13))\\
 \end{align}
 $$
 
+
 ###### Conclusion
+
 $$0.0021 < 0.05$$ so reject $$H_0$$, their is evidence of a difference in the distributions.
+
