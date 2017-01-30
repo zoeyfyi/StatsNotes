@@ -6,12 +6,9 @@ Wilcoxon signed-rank test is also a distribution free test, for when we can use 
 
 Test if the distributions of mock and a-level results are the same.
 
-Hypothesis  
-$2x$
+Hypothesis
 
-$$2xs$$
-
-$H\_0$: Population median difference = 0  
+$$H\_0$$: Population median difference = 0  
 $H\_1$: Population median difference &gt; 0
 
 | Candidate | Mock | A level | Difference | Rank | $+$ Rank | $-$ Rank |
