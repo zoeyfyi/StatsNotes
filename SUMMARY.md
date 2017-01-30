@@ -3,7 +3,7 @@
 ## SS1
 
 * [Introduction](README.md)
-* Schemes for attributes and varibles
+* [Standard error of the mean](standard-error-of-the-mean.md)
 
 ## SS2
 
@@ -42,6 +42,7 @@
 * Two-way analysis of variance
 * Latin squares
 * Charts
+* [Schemes for attributes and varibles](schemes-for-attributes-and-varibles.md)
 * Estimating short-term standard deviation
 * Double sampling plan
 
