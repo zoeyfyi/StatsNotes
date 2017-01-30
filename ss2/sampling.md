@@ -40,11 +40,15 @@ Each element in the sampling frame is assigned a number then, using a random num
 Each member in the population is written down on a ticket and put into a container. Tickets are then drawn one at a time (without replacement) until the sample size is met.
 
 ### Systematic sampling
-Take every $k^{th}$ element from an ordered list of samples where: 
-$$k = \frac{\text{population size} (N)}{\text{sample size} (n)}$$
-So that the first element of the population is not always selected the first item is selected randomly e.g. start at the $3^{rd}$ element and pick every $4^{th}$ element.
+Take every $$k^{th}$$ element from an ordered list of samples where: 
 
-Its easy to introduce bias with certain data e.g. if you had 100 years of rainfall data and $k$ was 12 month, you would be selecting the same month.
+$$
+k = \frac{\text{population size} (N)}{\text{sample size} (n)}
+$$
+
+So that the first element of the population is not always selected the first item is selected randomly e.g. start at the $$3^{rd}$$ element and pick every $$4^{th}$$ element.
+
+Its easy to introduce bias with certain data e.g. if you had 100 years of rainfall data and $$k$$ was 12 month, you would be selecting the same month.
 
 **Advantages**
 
@@ -58,7 +62,10 @@ Its easy to introduce bias with certain data e.g. if you had 100 years of rainfa
 
 ### Stratified sampling
 The populating is divided into mutually exclusive groups called strata. Within each strata a simple random sample is used such that each stratum is representative of the overall population.
-$$\text{stratum sample size} = \frac{\text{stratum size}}{\text{population size}} * \text{sample size}$$
+
+$$
+\text{stratum sample size} = \frac{\text{stratum size}}{\text{population size}} * \text{sample size}
+$$
 
 **Advantages**
 
@@ -119,9 +126,9 @@ Sourced elsewhere, not collected for the person who is going to use it.
 
 ### Statistics and sampling distributions
 
-> **Statistic**: A characteristic of a sample, if $X_1, X_2, X_3, ..., X_n$ is a random sample of size $n$ then a statistic $T$ is a random variable made of any function of $X_i$.
+> **Statistic**: A characteristic of a sample, if $$X_1, X_2, X_3, ..., X_n$$ is a random sample of size $$n$$ then a statistic $$T$$ is a random variable made of any function of $$X_i$$.
 
-For example $\frac{X_1 + X_2 + X_3}{3}$ is a statistic because it only uses the samples, $\sum_{i=1}^{n} (\frac{|X_i - \mu|}{n})$ is not a statistic because it contains $\mu$, a population parameter.
+For example $$\frac{X_1 + X_2 + X_3}{3}$$ is a statistic because it only uses the samples, $$\sum_{i=1}^{n} (\frac{|X_i - \mu|}{n})$$ is not a statistic because it contains $$\mu$$, a population parameter.
 
 > **Sampling Distribution**: Since sampling can be repeated, the sampling distribution of $T$ is a probability distribution for the given statistic.
 
@@ -132,7 +139,7 @@ For example $\frac{X_1 + X_2 + X_3}{3}$ is a statistic because it only uses the 
 > **Estimator**: A statistic used to estimate a population parameter.
 
 #### Example 1
-For a random sample $X_1, X_2, ..., X_n$ with a distribution $X \sim N(\mu, \sigma^2)$ show that $E(\bar{X}) = \mu$
+For a random sample $$X_1, X_2, ..., X_n$$ with a distribution $$X \sim N(\mu, \sigma^2)$$ show that $$E(\bar{X}) = \mu$$
 
 $$
 \begin{align}
@@ -156,7 +163,7 @@ $$
 \end{align}
 $$
 
-This means that $\bar{X}$ is an estimator for $\mu$ and on average, should give the correct result. This means $\bar{X}$ is an unbiased estimator for $\mu$
+This means that $$\bar{X}$$ is an estimator for $$\mu$$ and on average, should give the correct result. This means $$\bar{X}$$ is an unbiased estimator for $$\mu$$
 
 #### Example 2
 Bolts of lengths 5cm and 10cm are produced in the ration 2:1 respectively. For a random sample of 3 bolts calculate the bias of the estimator of the mode.
@@ -197,16 +204,23 @@ E(M) &= 5 \times \frac{20}{27} + 10 \times \frac{7}{27}\\
 $$
 
 bias:
+$$
 \begin{align}
 \text{bias} &= E(M) - \text{mode}\\
               &= \frac{170}{27} - 5 \\
               &= \frac{35}{27} \\
               &= 1.30...
 \end{align}
+$$
 
 ### Standard error of the mean
 
- $$E(\bar{X}) = \mu$$  $$\text{Var}(\bar{X}) = \frac{\sigma^2}{n}$$ 
+$$
+E(\bar{X}) = \mu$$  $$\text{Var}(\bar{X}) = \frac{\sigma^2}{n}
+$$ 
+ 
+
+ 
  Notice how the variance of the estimator decreases as the number of samples increases which means that the estimate for $\mu$ gets more accurate. In calculations its useful to find the standard error, a measure of a statistics accuracy, which is the standard deviation. The standard error of the estimator for $\mu$ is:
  $$\text{standard error} = \sqrt{\text{Var}(\bar{X})} = \sqrt{\frac{\sigma^2}{n}} = \frac{\sigma}{\sqrt{n}}$$ 
 
