@@ -29,7 +29,8 @@
 * [Rectangular and Exponential distributions](ss5/rectangular-and-exponential-distributions.md)
 * [Variance on a sample of a normal distribution](ss5/variance-on-a-sample-of-a-normal-distribution.md)
 * [Goodness of fit tests](ss5/goodness-of-fit-tests.md)
-* [Test equal variance of normal distributions](ss5/test-equal-variance-of-normal-distributions.md)
+* [Test for equality of varience in normal distributions](ss5/test-for-equality-of-varience-in-normal-distributions.md)
+* [F-distribution](ss5/test-equal-variance-of-normal-distributions.md)
 
 ## SS6
 
