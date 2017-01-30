@@ -10,6 +10,7 @@ $$H_0$$: Driver injury $$=$$ Passenger injury
 $$H_1$$: Driver injury $$\ne$$ Passenger injury
 
 Signs
+
 | test | Driver | Passenger | sign |
 | --- | --- | --- | --- |
 | 1 | 42 | 35 | + |
