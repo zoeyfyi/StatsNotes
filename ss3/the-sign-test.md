@@ -1,41 +1,304 @@
-## Wilcoxon signed-rank test
+\#\#
 
-Wilcoxon signed-rank test is also a distribution free test, for when we can use a z or t test. Its similar to the sign test except we rank the differences \(ignoring the signs, smallest first\), then add the ranks with the same signs.
+ Sign test
 
-#### Example
+The
 
-Test if the distributions of mock and a-level results are the same.
+si
+
+g
+
+n
+
+ test is a 
+
+\*\*
+
+distribution free
+
+\*\*
+
+ test since it doesn't require the data to follow a particular distribution. Its also very simple, just find the sign of the difference ignoring any pairs that are equal. Then use 
+
+$
+
+P
+
+\(
+
+X 
+
+&lt;
+
+ min
+
+\(
+
+a, b
+
+\)
+
+\| X 
+
+\sim
+
+ B
+
+\(
+
+n, 
+
+\frac
+
+{
+
+1
+
+}
+
+{
+
+2
+
+}
+
+\)
+
+$
+
+ where 
+
+$
+
+a
+
+$
+
+ and 
+
+$
+
+b
+
+$
+
+ are the number of each sign and n is number of all valid signs \(not Nan\).
+
+\#\#\#\#
+
+ Example
+
+Data is collected about driver and passenger injury's. Test at 5% significance weather these are related.
 
 Hypothesis
 
-$$H_0$$: Population median difference = 0  
-$$H_1$$: Population median difference &gt; 0
+$
 
-| Candidate | Mock | A level | Difference | Rank | $$+$$ Rank | $$-$$ Rank |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | 40 | 45 | 5 | 7 | 7 |  |
-| 2 | 65 | 68 | 3 | 4 | 4 |  |
-| 3 | 53 | 47 | -6 | 9.5 |  | 9.5 |
-| 4 | 79 | 75 | -4 | 6 |  | 6 |
-| 5 | 87 | 88 | 1 | 1 | 1 |  |
-| 6 | 87 | 88 | 18 | 13 | 13 |  |
-| 7 | 80 | 77 | -3 | 4 |  | 4 |
-| 8 | 63 | 69 | 6 | 9.5 | 9.5 |  |
-| 9 | 51 | 60 | 9 | 12 | 12 |  |
-| 10 | 82 | 88 | 6 | 9.5 | 9.5 |  |
-| 11 | 27 | 30 | 3 | 4 | 4 |  |
-| 12 | 71 | 73 | 2 | 2 | 2 |  |
-| 13 | 29 | 35 | 6 | 9.5 | 9.5 |  |
+H\_0
 
+$
+
+: Driver injury 
+
+$
+
+=
+
+$
+
+ Passenger injury
+
+$
+
+H\_1
+
+$
+
+: Driver injury 
+
+$
+
+\ne
+
+$
+
+ Passenger injury
+
+Signs
+
+\| 
+
+$
+
+$
+
+ \| Driver \| Passenger \| sign \|
+
+ \| --- \| --- \| --- \| --- \|
+
+ \| 1 \| 42 \| 35 \| + \|
+
+ \| 2 \| 42 \| 35 \| + \|
+
+ \| 3 \| 34 \| 45 \| - \|
+
+ \| 4 \| 34 \| 45 \| - \|
+
+ \| 5 \| 45 \| 45 \| Nan \|
+
+ \| 6 \| 40 \| 42 \| - \|
+
+ \| 7 \| 42 \| 46 \| - \|
+
+ \| 8 \| 43 \| 58 \| - \|
+
+ \| 9 \| 45 \| 43 \| + \|
+
+ \| 10 \| 36 \| 37 \| - \|
+
+ \| 11 \| 36 \| 37 \| - \|
+
+ \| 12 \| 43 \| 58 \| - \|
+
+ \| 13 \| 40 \| 42 \| - \|
+
+ \| 14 \| 43 \| 58 \| - \|
+
+ \| 15 \| 37 \| 41 \| - \|
+
+ \| 16 \| 37 \| 41 \| - \|
+
+ \| 17 \| 44 \| 57 \| - \|
+
+ \| 18 \| 42 \| 42 \| Nan \|
+
+Test statistic
 
 $$
-T_+ = \sum{+ \text{Rank}} = 71.5\\
-T_- = \sum{- \text{Rank}} = 19.5\\
-T = 19.5
+
+ X 
+
+\sim
+
+ B
+
+\(
+
+18-2, 
+
+\frac
+
+{
+
+1
+
+}
+
+{
+
+2
+
+}
+
+\)
+
+\\
+
+\begin
+
+{
+
+align
+
+}
+
+ b 
+
+&
+
+= P
+
+\(
+
+X 
+
+&lt;
+
+ min
+
+\(
+
+3, 13
+
+\)
+
+\)
+
+\\
+
+&
+
+= P
+
+\(
+
+X 
+
+&lt;
+
+ 3
+
+\)
+
+\\
+
+&
+
+= P
+
+\(
+
+X 
+
+\leq
+
+ 2
+
+\)
+
+\\
+
+&
+
+= 0.0021
+
+\end
+
+{
+
+align
+
+}
+
 $$
 
+$
 
-Critical value: 21
+0.0021 
 
-$$19.5 \lt 21$$ so reject $$H_0$$, evidence students did better in their A Level.
+&lt;
+
+ 0.05
+
+$
+
+ so reject 
+
+$
+
+H\_0
+
+$
+
+, their is evidence of a difference in the distributions.
 

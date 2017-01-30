@@ -8,7 +8,8 @@
 
 ## SS3
 
-* [The Sign Test](ss3/the-sign-test.md)
+* [The sign test](ss3/the-sign-test.md)
+* [Wilcoxon signed-rank test](/ss3/wilcoxon-signed-rank-test.md#wilcoxon-signed-rank-test)
 
 ## SS4
 
