@@ -11,7 +11,7 @@ Hypothesis
 $$H_0$$: Population median difference = 0  
 $$H_1$$: Population median difference &gt; 0
 
-| Candidate | Mock | A level | Difference | Rank | $$+$$ Rank | $-$ Rank |
+| Candidate | Mock | A level | Difference | Rank | $$+$$ Rank | $$-$$ Rank |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | 40 | 45 | 5 | 7 | 7 |  |
 | 2 | 65 | 68 | 3 | 4 | 4 |  |
