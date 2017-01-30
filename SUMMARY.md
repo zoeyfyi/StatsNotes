@@ -13,7 +13,7 @@
 * [The sign test](ss3/the-sign-test.md)
 * [Wilcoxon signed-rank test](/ss3/wilcoxon-signed-rank-test.md#wilcoxon-signed-rank-test)
 * [Mann-Whitney U test](ss3/mann-whitney-u-test.md)
-* Kruskal-Wallis test 
+* [Kruskal-Wallis test ](ss3/kruskal-wallis-test.md)
 * [Spearman's rank correlation coefficent](ss3/spearman's-rank-correlation-coefficent.md)
 * [Testing correlation coefficient is zero](ss3/testing-correlation-coefficient-is-zero.md)
 
