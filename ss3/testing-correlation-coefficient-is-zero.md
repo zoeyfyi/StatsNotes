@@ -35,4 +35,4 @@ $$
 \pm0.7067
 $$
 
-$$-0.7067 < 0.686 < 0.7067$$ so value is not in critical region, accept $H_0$, evidence to suggest product moment correlation coefficient is zero.
+$$-0.7067 < 0.686 < 0.7067$$ so value is not in critical region, accept $$H_0$$, evidence to suggest product moment correlation coefficient is zero.
