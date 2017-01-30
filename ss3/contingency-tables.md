@@ -3,7 +3,8 @@ So far we have looked at the frequency a single event happens, but sometimes you
 
 #### Example
 Trains from 3 stations leave late or on-time, test at 5% is their is any association.
-| $ $ | On Time | Late
+
+|   | On Time | Late |
 | --- | --- | --- |
 | A | 26 | 14 |
 | B | 30 | 10 |
