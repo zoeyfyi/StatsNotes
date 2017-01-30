@@ -45,7 +45,7 @@
 * [Charts](ss6/charts.md)
 * [Schemes for attributes and varibles](schemes-for-attributes-and-varibles.md)
 * [Estimating short-term standard deviation](ss6/estimating-short-term-standard-deviation.md)
-* Double sampling plan
+* [Double sampling plan](ss6/double-sampling-plan.md)
 
 ## Meta
 
