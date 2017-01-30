@@ -42,4 +42,4 @@ b &= P(X < min(3, 13))\\
 \end{align}
 $$
 
-$0.0021 < 0.05$ so reject $H_0$, their is evidence of a difference in the distributions.
+$$0.0021 < 0.05$ so reject $H_0$, their is evidence of a difference in the distributions.
