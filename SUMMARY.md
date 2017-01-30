@@ -44,7 +44,7 @@
 * [Latin squares](ss6/latin-squares.md)
 * [Charts](ss6/charts.md)
 * [Schemes for attributes and varibles](schemes-for-attributes-and-varibles.md)
-* Estimating short-term standard deviation
+* [Estimating short-term standard deviation](ss6/estimating-short-term-standard-deviation.md)
 * Double sampling plan
 
 ## Meta
