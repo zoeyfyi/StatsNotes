@@ -8,8 +8,8 @@ Test if the distributions of mock and a-level results are the same.
 
 Hypothesis
 
-$$H\_0$$: Population median difference = 0  
-$H\_1$: Population median difference &gt; 0
+$$H_0$$: Population median difference = 0  
+$$H\_1$$: Population median difference &gt; 0
 
 | Candidate | Mock | A level | Difference | Rank | $+$ Rank | $-$ Rank |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
