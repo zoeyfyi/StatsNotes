@@ -40,7 +40,7 @@
 * [Experimental design](ss6/experimental-design.md)
 * [Paired t-test](ss6/paired-t-test.md)
 * [One-way analysis of variance](ss6/one-way-analysis-of-variance.md)
-* Two-way analysis of variance
+* [Two-way analysis of variance](ss6/two-way-analysis-of-variance.md)
 * Latin squares
 * [Charts](ss6/charts.md)
 * [Schemes for attributes and varibles](schemes-for-attributes-and-varibles.md)
