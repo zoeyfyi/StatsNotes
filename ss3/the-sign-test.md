@@ -5,11 +5,11 @@ The sign test is a **distribution free** test since it doesn't require the data 
 
 Data is collected about driver and passenger injury's. Test at 5% significance weather these are related.
 
-Hypothesis
+###### Hypothesis
 $$H_0$$: Driver injury $$=$$ Passenger injury
 $$H_1$$: Driver injury $$\ne$$ Passenger injury
 
-Signs
+###### Signs
 
 | test | Driver | Passenger | sign |
 | --- | --- | --- | --- |
@@ -32,7 +32,7 @@ Signs
 | 17 | 44 | 57 | - |
 | 18 | 42 | 42 | Nan |
 
-Test statistic
+###### Test statistic
 $$
 X \sim B(18-2, \frac{1}{2})\\
 \begin{align}
@@ -43,4 +43,5 @@ b &= P(X < min(3, 13))\\
 \end{align}
 $$
 
+###### Conclusion
 $$0.0021 < 0.05$$ so reject $$H_0$$, their is evidence of a difference in the distributions.
