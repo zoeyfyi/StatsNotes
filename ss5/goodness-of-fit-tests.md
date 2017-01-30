@@ -73,19 +73,24 @@ Conditions for a binomial distribution:
 
 You can estimate $p$ with:
 
-$$p = \frac{\text{total number of successes}}{\text{number of trials} \times \text{number of observations}}$$
+
+$$
+p = \frac{\text{total number of successes}}{\text{number of trials} \times \text{number of observations}}
+$$
 
 So if $p$ is estimated: $v = \text{number of cells} - 2$
 Else: $v = \text{number of cells} - 1$
 
 #### Example
 The following table shows observed and expected values for a binomial model.
+
 | $O_i$ | 17 | 28 | 32 | 15 | 5 | 3 |
 | --- | --- | --- | --- | --- | --- | --- |
 | $E_i$ | 19.69 | 34.74 | 27.58 | 12.98 | 4.01 | 0.99 |
 
-##### a. Test at a 5% significance level
+###### Test at a 5% significance level
 Since $E_i < 5$ in the last to columns, we must combine them to work out $\chi^2$:
+
 | $O_i$ | 17 | 28 | 32 | 15 | 9 |
 | --- | --- | --- | --- | --- | --- |
 | $E_i$ | 19.69 | 34.74 | 27.58 | 12.98 | 5 |
