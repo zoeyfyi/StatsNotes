@@ -9,7 +9,7 @@ Test if the distributions of mock and a-level results are the same.
 Hypothesis
 
 $$H_0$$: Population median difference = 0  
-$$H\_1$$: Population median difference &gt; 0
+$$H_1$$: Population median difference &gt; 0
 
 | Candidate | Mock | A level | Difference | Rank | $+$ Rank | $-$ Rank |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -35,7 +35,7 @@ T = 19.5
 $$
 
 
-Critical value $ = 21$
+Critical value: 21
 
-$19.5 &lt; 21$ so reject $H\_0$, evidence students did better in their A Level.
+$$19.5 &lt; 21$$ so reject $H\_0$, evidence students did better in their A Level.
 
