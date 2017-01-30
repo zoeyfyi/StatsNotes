@@ -71,7 +71,7 @@ Conditions for a binomial distribution:
 - Only success and faliures
 - Probabilty of success is constant
 
-You can estimate $p$ with:
+You can estimate $$p$$ with:
 
 
 $$
