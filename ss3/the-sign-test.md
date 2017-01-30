@@ -37,5 +37,5 @@ $$
 
 Critical value: 21
 
-$$19.5 \lt 21$$ so reject $$$$, evidence students did better in their A Level.
+$$19.5 \lt 21$$ so reject $$H\_0$$, evidence students did better in their A Level.
 
