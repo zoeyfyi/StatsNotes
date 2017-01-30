@@ -5,7 +5,7 @@ Mann-Whitney U-Test is another non-parametric test that is used to test if two s
 #### Process
 
 1. Write hypothesis.
-2. Rank the data across both sample sets (as if they were one) and calculate the sum of the ranks of each set.
+2. Rank the data (as if it was just a single set) and calculate the sum of the ranks of each set.
 3. Calculate the statistic for each set using $$U = T - \frac{n(n+1)}{2}$$ where $$T$$ is the sum of the ranks and $$n$$ is the sample size. The test statistic is the minimum of the two $$U$$ values
 4. Find the critical value on table 11
 5. Compare the statistic and critical value, if the statistic is less than the critical value reject $$H_0$$
