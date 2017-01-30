@@ -78,6 +78,7 @@ $$
 p = \frac{\text{total number of successes}}{\text{number of trials} \times \text{number of observations}}
 $$
 
+
 So if $p$ is estimated: $v = \text{number of cells} - 2$
 Else: $v = \text{number of cells} - 1$
 
