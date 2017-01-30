@@ -18,6 +18,8 @@
 ## SS4
 
 * [Combination of random varibles](ss4/combination-of-random-varibles.md)
+* Approximating distributions
+* [t-distribution](ss4/t-distribution.md)
 
 ## SS5
 
