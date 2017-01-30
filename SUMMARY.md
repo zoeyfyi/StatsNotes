@@ -41,7 +41,7 @@
 * [Paired t-test](ss6/paired-t-test.md)
 * [One-way analysis of variance](ss6/one-way-analysis-of-variance.md)
 * [Two-way analysis of variance](ss6/two-way-analysis-of-variance.md)
-* Latin squares
+* [Latin squares](ss6/latin-squares.md)
 * [Charts](ss6/charts.md)
 * [Schemes for attributes and varibles](schemes-for-attributes-and-varibles.md)
 * Estimating short-term standard deviation
