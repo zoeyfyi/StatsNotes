@@ -6,6 +6,8 @@
 
 ## SS2
 
+* [Sampling](ss2/sampling.md)
+
 ## SS3
 
 * [The sign test](ss3/the-sign-test.md)
