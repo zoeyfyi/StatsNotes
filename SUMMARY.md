@@ -37,12 +37,12 @@
 
 ## SS6
 
-* Experimental design
+* [Experimental design](ss6/experimental-design.md)
 * [Paired t-test](ss6/paired-t-test.md)
 * One-way analysis of variance
 * Two-way analysis of variance
 * Latin squares
-* Charts
+* [Charts](ss6/charts.md)
 * [Schemes for attributes and varibles](schemes-for-attributes-and-varibles.md)
 * Estimating short-term standard deviation
 * Double sampling plan
