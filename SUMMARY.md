@@ -10,10 +10,15 @@
 
 * [The sign test](ss3/the-sign-test.md)
 * [Wilcoxon signed-rank test](/ss3/wilcoxon-signed-rank-test.md#wilcoxon-signed-rank-test)
+* [Spearman's rank correlation coefficent](ss3/spearman's-rank-correlation-coefficent.md)
 
 ## SS4
 
 ## SS5
 
 ## SS6
+
+## Meta
+
+* [hypothesis tests](meta/hypothesis-tests.md)
 
