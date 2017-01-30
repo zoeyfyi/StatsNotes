@@ -6,8 +6,8 @@ The sign test is a **distribution free** test since it doesn't require the data 
 Data is collected about driver and passenger injury's. Test at 5% significance weather these are related.
 
 Hypothesis
-$H_0$: Driver injury $=$ Passenger injury
-$H_1$: Driver injury $\ne$ Passenger injury
+$$H_0$$: Driver injury $$=$$ Passenger injury
+$$H_1$$: Driver injury $$\ne$$ Passenger injury
 
 Signs
 | test | Driver | Passenger | sign |
