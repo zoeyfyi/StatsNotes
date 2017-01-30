@@ -1,6 +1,6 @@
-# \#\# Sign test
+# Sign test
 
-The sign test is a \*\*distribution free\*\* test since it doesn't require the data to follow a particular distribution. Its also very simple, just find the sign of the difference ignoring any pairs that are equal. Then use $P\(X &lt; min\(a, b\)\| X \sim B\(n, \frac{1}{2}\)$ where $a$ and $b$ are the number of each sign and n is number of all valid signs \(not Nan\).
+The sign test is a **distribution free** test since it doesn't require the data to follow a particular distribution. Its also very simple, just find the sign of the difference ignoring any pairs that are equal. Then use $P\(X &lt; min\(a, b\)\| X \sim B\(n, \frac{1}{2}\)$ where $a$ and $b$ are the number of each sign and n is number of all valid signs \(not Nan\).
 
 \#\#\#\# Example
 
