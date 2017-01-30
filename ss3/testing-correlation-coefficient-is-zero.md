@@ -1,5 +1,5 @@
 ## Testing correlation coefficient is zero
-We may be interested in conducting a test to show their is no correlation between two random variables.
+We may be interested in conducting a test to show their is no correlation between two random variables. First we find the correlation coefficient, then get the critical value from the appropriate table.
 
 #### Example
 Test to see if their is no correlation between English and maths marks at the 5% significance level.
