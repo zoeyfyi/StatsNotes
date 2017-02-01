@@ -28,8 +28,8 @@
 
 * [Combination of random varibles](ss4/combination-of-random-varibles.md)
 * [Approximating distributions](ss4/approximating-distributions.md)
+* [Hypothesis testing with the possion distribution](ss4/test-for-proportionmean-of-poisson-distriution.md)
 * [t-distribution](ss4/t-distribution.md)
-* [Test for proportion/mean of poisson distriution](ss4/test-for-proportionmean-of-poisson-distriution.md)
 
 ## SS5
 
