@@ -10,8 +10,8 @@ Let $$n = 26$$, $$\bar{x} = 122$$ and $$s^2 = 225$$. Calculate a 95% confidence 
 
 $$
 \begin{align}
-122 \pm t_{26-1}(0.025) \times \frac{\sqrt{225}}{\sqrt{26}} &=\\
-122 \pm 2.060 \times 3.132&= (115.941, 128.059)\\
+122 \pm t_{26-1}(0.025) \times \frac{\sqrt{225}}{\sqrt{26}} &= 122 \pm 2.060 \times 3.132\\
+&= (115.941, 128.059)\\
 \end{align}
 $$
 
