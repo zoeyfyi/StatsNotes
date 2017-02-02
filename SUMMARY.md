@@ -40,6 +40,7 @@
 * Hypothesis testing
   * [t-distribution hypothesis test](ss4/hypothesis-test-for-mean.md)
   * [Poisson hypothesis test](ss4/test-for-proportionmean-of-poisson-distriution.md)
+  * [Test of proportion](ss4/test-of-proportion.md)
 
 ## SS5
 
