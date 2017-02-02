@@ -39,6 +39,7 @@
   * Approximate confidence interval
 * Hypothesis testing
   * [Hypothesis testing with the possion distribution](ss4/test-for-proportionmean-of-poisson-distriution.md)
+  * [Hypothesis test for mean](ss4/hypothesis-test-for-mean.md)
 
 ## SS5
 
