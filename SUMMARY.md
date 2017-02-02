@@ -35,6 +35,8 @@
   * [Binomial to Poisson approximation](ss4/binomial-to-poisson-approximation.md)
 * Estimation
   * [t-distribution](ss4/t-distribution.md)
+  * [Confidence interval for a sample](ss4/confidence-interval-for-a-sample.md)
+  * Approximate confidence interval
 * Hypothesis testing
   * [Hypothesis testing with the possion distribution](ss4/test-for-proportionmean-of-poisson-distriution.md)
 
