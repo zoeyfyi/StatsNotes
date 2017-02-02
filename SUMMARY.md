@@ -38,8 +38,8 @@
   * [Confidence interval for a sample](ss4/confidence-interval-for-a-sample.md)
   * Approximate confidence interval
 * Hypothesis testing
-  * [Hypothesis testing with the possion distribution](ss4/test-for-proportionmean-of-poisson-distriution.md)
-  * [Hypothesis test for mean](ss4/hypothesis-test-for-mean.md)
+  * [t-distribution hypothesis test](ss4/hypothesis-test-for-mean.md)
+  * [Poisson hypothesis test](ss4/test-for-proportionmean-of-poisson-distriution.md)
 
 ## SS5
 
