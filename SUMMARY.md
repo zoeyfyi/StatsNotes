@@ -26,10 +26,17 @@
 
 ## SS4
 
-* [Combination of random varibles](ss4/combination-of-random-varibles.md)
-* [Approximating distributions](ss4/approximating-distributions.md)
-* [Hypothesis testing with the possion distribution](ss4/test-for-proportionmean-of-poisson-distriution.md)
-* [t-distribution](ss4/t-distribution.md)
+* Continuous Probability Distributions
+  * [Combination of random varibles](ss4/combination-of-random-varibles.md)
+* Distributional Approximations
+  * [Continuity corrections](ss4/continuity-corrections.md)
+  * [Binomial to normal approximation](ss4/binomial-to-normal-approximation.md)
+  * [Poission to normal approximation](ss4/poission-to-normal-approximation.md)
+  * [Binomial to Poisson approximation](ss4/binomial-to-poisson-approximation.md)
+* Estimation
+  * [t-distribution](ss4/t-distribution.md)
+* Hypothesis testing
+  * [Hypothesis testing with the possion distribution](ss4/test-for-proportionmean-of-poisson-distriution.md)
 
 ## SS5
 
