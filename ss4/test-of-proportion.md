@@ -25,3 +25,44 @@ $$
 
 ###### Conclusion
 $$0.250 > 0.05$$ so accept $$H_0$$, no evidence that the proportion of passengers rating the meal bad had reduced.
+
+#### Example (with approximation)
+Past experience suggests that 40% of households donate to charity. In a sample 1240 households where asked if they donate, 476 had. Test the hypothesis that the number of households that donate is 40%.
+
+###### Hypothesis
+$$
+H_0: p = 0.4\\
+H_1: p \ne 0.4
+$$
+
+###### Test statisitc
+$$
+X \sim B(1240, 0.4)\\
+\mu = 1240 \times 0.4 = 496\\
+\sigma^2 = 1240 \times 0.4(1 - 0.4)\\
+X \approx N(496, 297.6)
+$$$$
+z = \frac{476.5 - 496}{\sqrt{297.6}} = -1.13
+$$
+
+###### Critical value
+$$
+\text{cv} = \pm 1.96
+$$
+
+###### Conclusion
+$$-1.96 < -1.13 < 1.96$$ so accept $$H_0$$, evidence support claim that 40% of households make a donation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
