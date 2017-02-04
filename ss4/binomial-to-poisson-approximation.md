@@ -4,20 +4,13 @@ When $$np < 10$$, $$n \geq 20$$ and $$p \leq 0.05$$ the binomial distribution ca
 #### Example
 Based upon past experience, 1% of the telephone bills mailed to households are incorrect. If a sample of 20 bills is selected, find the probability that at least one bill will be incorrect.
 
-###### Find the mean and varience
+###### Find the mean
 $$
 \begin{align}
 \mu &= \lambda\\
 &= np\\
 &= 20 * 0.01\\
 &= 0.2
-\end{align}
-$$
-$$
-\begin{align}
-\sigma^2 &= \lambda\\
-&= np\\
-&= 0.2\\
 \end{align}
 $$
 
