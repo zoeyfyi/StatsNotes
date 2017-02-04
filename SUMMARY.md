@@ -37,6 +37,7 @@
   * [t-distribution](ss4/t-distribution.md)
   * [Confidence interval for a sample](ss4/confidence-interval-for-a-sample.md)
   * [Confidence interval for poisson](ss4/confidence-interval-for-poisson.md)
+  * [Confidence interval for a proportion](ss4/confidence-interval-for-a-proportion.md)
 * Hypothesis testing
   * [t-distribution hypothesis test](ss4/hypothesis-test-for-mean.md)
   * [Poisson hypothesis test](ss4/test-for-proportionmean-of-poisson-distriution.md)

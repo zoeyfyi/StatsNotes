@@ -3,7 +3,7 @@ For an observation from a Poisson distribution we know that we can approximate i
 $$
 \lambda \pm \frac{z}{\sqrt{\lambda}}
 $$
-where $$z$$ is the critical value of the significance level.
+where $$z$$ is the Z-value for the significance level.
 
 #### Example
 Voters arrived between 6pm and 9pm. In the first hour 51 voters showed up. Assuing the arrivals can be moddled by a poisson distribution, calculate a 95% confidence interval
