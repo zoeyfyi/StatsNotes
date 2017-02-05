@@ -1,16 +1,12 @@
-## Test equal variances of two normal distributions
-
+# Test equality of variances from two normal distributions
 If we assume $$\sigma^2_x = \sigma^2_y$$ then 
 $$
 \frac{\frac{s_y^2}{\sigma_y^2}}{\frac{s_x^2}{\sigma_x^2}} \sim F_{n_x-1, n_y-1}
 $$
-
 becomes
-
 $$
 \frac{s_y^2}{s_x^2} \sim F_{n_x-1, n_y-1}
 $$
-
 which is are test statistic
 
 #### Example
