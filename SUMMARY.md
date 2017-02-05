@@ -58,7 +58,7 @@
     * [Poisson distiribution](ss5/poisson-distiribution.md)
   * [F-distribution](ss5/test-equal-variance-of-normal-distributions.md)
   * [Test for equality means](ss5/test-for-equality-of-varience-in-normal-distributions.md)
-  * Test for variance equality
+  * [Test for variance equality](ss5/test-for-variance-equality.md)
 
 ## SS6
 
