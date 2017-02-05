@@ -46,7 +46,8 @@
 ## SS5
 
 * Continuous Probability Distributions
-  * [Rectangular and Exponential distributions](ss5/rectangular-and-exponential-distributions.md)
+  * [Rectangular distribution](ss5/rectangular-distribution.md)
+  * Exponential distribution
 * Estimation
   * [Confidence interval for variance](ss5/variance-on-a-sample-of-a-normal-distribution.md)
 * Hypothesis testing
