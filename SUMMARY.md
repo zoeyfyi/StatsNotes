@@ -45,12 +45,16 @@
 
 ## SS5
 
-* [Rectangular and Exponential distributions](ss5/rectangular-and-exponential-distributions.md)
-* [Variance on a sample of a normal distribution](ss5/variance-on-a-sample-of-a-normal-distribution.md)
-* [Goodness of fit tests](ss5/goodness-of-fit-tests.md)
-* [Test for equality means](ss5/test-for-equality-of-varience-in-normal-distributions.md)
-* [F-distribution](ss5/test-equal-variance-of-normal-distributions.md)
-
+* Continuous Probability Distributions
+  * [Rectangular and Exponential distributions](ss5/rectangular-and-exponential-distributions.md)
+* Estimation
+  * [Confidence interval for variance](ss5/variance-on-a-sample-of-a-normal-distribution.md)
+* Hypothesis testing
+  * Test for variance
+  * [Goodness of fit tests](ss5/goodness-of-fit-tests.md)
+  * [F-distribution](ss5/test-equal-variance-of-normal-distributions.md)
+  * [Test for equality means](ss5/test-for-equality-of-varience-in-normal-distributions.md)
+  
 ## SS6
 
 * [Experimental design](ss6/experimental-design.md)
