@@ -54,11 +54,11 @@
   * [Test for variance](ss5/test-for-variance.md)
   * [F-distribution](ss5/test-equal-variance-of-normal-distributions.md)
   * [Test for variance equality](ss5/test-for-variance-equality.md)
+  * [Test for mean equality](ss5/test-for-equality-of-varience-in-normal-distributions.md)
   * [Goodness of fit tests](ss5/goodness-of-fit-tests.md)
     * [Discrete uniform distribution](ss5/discrete-uniform-distribution.md)
     * [Binomial distiribution](ss5/binomial-distiribution.md)
     * [Poisson distiribution](ss5/poisson-distiribution.md)
-  * [Test for equality means](ss5/test-for-equality-of-varience-in-normal-distributions.md)
 
 ## SS6
 
@@ -76,4 +76,5 @@
 
 * [hypothesis tests](meta/hypothesis-tests.md)
 * [Quality of estimators](meta/quality-of-estimators.md)
+* [pooled estimate](meta/pooled-estimate.md)
 

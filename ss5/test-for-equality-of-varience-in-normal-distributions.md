@@ -7,7 +7,7 @@ Z = \frac{\bar{X} - \bar{Y} - (\mu_x - \mu_y)}
 {\sqrt{\frac{\sigma_x^2}{n_x}+\frac{\sigma_y^2}{n_y}}}
 $$
 
-If $$n_x$$ and $$n_y$$ are larger enough, this statistic can be used for distributions where $$X$$ and $$Y$$ are not normal
+If $$n_x$$ and $$n_y$$ are larger enough, this statistic can be used for distributions where $$X$$ and $$Y$$ are not normal.
 
 #### Example
 A study weighs children in area $$A$$ and area $$B$$. The results are as follows:
@@ -41,34 +41,6 @@ $$z = \pm1.96$$
 
 ###### Conclusion
 Since $$-2.56 < -1.96$$, the result is significant so reject $$H_0$$, their is evidence that the mean weight is different in the two areas.
-
-#####State any assumptions made
-The test required $\sigma$ so it was assumed $s^2 = \sigma^2$ for the samples. We also assumed that both distributions were normally distributed because of their large sample size. 
-
-### Pooled estimate for variance
-Say you have two random variables with equal (but unknown) variance, a better estimate of the variance would be to combine the two estimators for variance from each distribution.
-
-To derive the pooled estimate we first take the indivdual estimators
-
-$$
-s_x^2 = \frac{\sum{(x - \bar{x}_x)^2}}{n_x-1}
-$$
-and
-$$
-s_y^2 = \frac{\sum{(x - \bar{x}_y)^2}}{n_y-1}
-$$
-
-adding the sum of squares
-$$
-\sum{(x - \bar{x}_x)^2} + \sum{(x - \bar{x}_y)^2} = s_x^2(n_x-1) + s_y^2(n_y-1)
-$$
-and if we treat the combined samples as a single sample
-$$
-\begin{align}
-\frac{\sum{(x - \bar{x}_x)^2} + \sum{(x - \bar{x}_y)^2}}{(n_x-1) + (n_y-1)} &= \frac{s_x^2(n_x-1) + s_y^2(n_y-1)}{(n_x-1) + (n_y-1)}\\
-s^2_p &= \frac{s_x^2(n_x-1) + s_y^2(n_y-1)}{n_x + n_y - 2}
-\end{align}
-$$
 
 ### Confidence interval for the difference between two means from independent normal distributions with equal but unknown variances.
 We already know that if the sample size is large
