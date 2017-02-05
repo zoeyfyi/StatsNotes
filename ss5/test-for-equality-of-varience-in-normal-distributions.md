@@ -1,4 +1,4 @@
-# Difference between distributions
+# Test for mean equality
 Sometimes we are interested in the difference between two independent populations.
 
 To test two distributions we can use the rules for combining distributions to derive this test statistic for two normal distributions $$X$$ and $$Y$$:
