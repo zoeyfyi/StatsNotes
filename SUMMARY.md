@@ -47,14 +47,16 @@
 
 * Continuous Probability Distributions
   * [Rectangular and Exponential distributions](ss5/rectangular-and-exponential-distributions.md)
+
 * Estimation
   * [Confidence interval for variance](ss5/variance-on-a-sample-of-a-normal-distribution.md)
 * Hypothesis testing
-  * Test for variance
+  * [Test for variance](ss5/test-for-variance.md)
   * [Goodness of fit tests](ss5/goodness-of-fit-tests.md)
+    * [Discrete uniform distribution](ss5/discrete-uniform-distribution.md)
   * [F-distribution](ss5/test-equal-variance-of-normal-distributions.md)
   * [Test for equality means](ss5/test-for-equality-of-varience-in-normal-distributions.md)
-  
+
 ## SS6
 
 * [Experimental design](ss6/experimental-design.md)
