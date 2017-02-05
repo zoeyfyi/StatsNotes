@@ -43,25 +43,23 @@ $$z = \pm1.96$$
 Since $$-2.56 < -1.96$$, the result is significant so reject $$H_0$$, their is evidence that the mean weight is different in the two areas.
 
 # Two sample t-test
-We can use the same method to test if two random variables (where t applies) have different means. 
+If the sample size is small we can use the z-test so if we assume that the populations have the same variance and are normally distributed we can use a similar method called the two sample t-test. 
 
 #### Example
-Group X: 40, 37, 45, 34, 30, 41, 42, 43, 36
-Group Y: 38, 43, 36, 45, 35, 44, 41
+Conduct a two sample t-test at a 10% significance level with the following data:
 
-##### State any assumptions that need to be made in order to conduct a difference of means test on this data.
-- Normaly distributed
-- Independent
-- Populations have the same variance
+| $$X$$ | $$40$$ | $$37$$ | $$45$$ | $$34$$ | $$30$$ | $$41$$ | $$42$$ | $$43$$ | $$36$$ |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| $$Y$$ | $$38$$ | $$43$$ | $$36$$ | $$45$$ | $$35$$ | $$44$$ | $$41$$ |
 
-##### Conduct the test at a 10% significance level.
-Hypothesis
+
+###### Hypothesis
 $$
 H_0: \mu_x = \mu_y \\
 H_1: \mu_x \ne \mu_y
 $$
 
-Varibles
+###### Test statistic
 $$
 n_x = 9\\
 \bar{x} = 38.667\\
@@ -73,7 +71,6 @@ n_y = 7\\
 s_y^2 = 15.905 
 $$
 
-Statistic
 $$
 s_p^2 = \frac{(9 - 1) \times 23 + (7 - 1) \times 15.905}{9 + 7 - 2} = 19.959\\
 $$
@@ -81,9 +78,10 @@ $$
 t = \frac{38.667 - 40.286}{\sqrt{19.959 \times (\frac{1}{9} + \frac{1}{7})}} = -0.719\\
 $$
 
-Critical value
+###### Critical value
 $$
 t_{9 + 7 - 2}(0.95) = t_{14}(0.95) = 1.761
 $$
 
-$-1.761 < -0.719 < 1.761$ so accept $H_0$, evidence suggests their is no difference in the means of the two groups.
+###### Conclusion
+$$-1.761 < -0.719 < 1.761$$ so accept $$H_0$$, evidence suggests their is no difference in the means of the two groups.
