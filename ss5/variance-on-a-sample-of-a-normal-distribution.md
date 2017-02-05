@@ -1,7 +1,5 @@
-# Variance on a sample of a normal distribution
-
-### Confidence interval for the variance of a normal distribution
-For a random sample of $$N(\mu, \sigma^2)$$ it is known that $$\frac{(n-1)s^2}{\sigma^2}$$ has a $$\chi^2_{n-1}$$ distribution.
+# Confidence interval for the variance of a normal distribution
+For a random sample of $$N(\mu, \sigma^2)$$ it is known that $$\frac{(n-1)s^2}{\sigma^2} \sim \chi^2_{n-1}$$.
 
 #### Example
 Calculate a 95% confidence interval for the mean and variance of the set: 266, 254, 215, 220, 253, 230, 216, 248, 234, 244.
