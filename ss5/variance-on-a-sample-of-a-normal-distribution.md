@@ -4,7 +4,6 @@ For a random sample of $$N(\mu, \sigma^2)$$ it is known that $$\frac{(n-1)s^2}{\
 #### Example
 Calculate a 95% confidence interval for the mean and variance of the set: 266, 254, 215, 220, 253, 230, 216, 248, 234, 244.
 
-Sample mean and variances estimator
 $$
 \begin{align}
 \bar{x} &= 238 \\
