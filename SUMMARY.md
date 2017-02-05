@@ -77,4 +77,5 @@
 * [hypothesis tests](meta/hypothesis-tests.md)
 * [Quality of estimators](meta/quality-of-estimators.md)
 * [pooled estimate](meta/pooled-estimate.md)
+* [Confidence interval for the difference between two means from independent normal distributions with equal but unknown variances.](meta/confidence-interval-for-the-difference-between-two-means-from-independent-normal-distributions-with-equal-but-unknown-variances.md)
 
