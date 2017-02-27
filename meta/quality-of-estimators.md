@@ -7,7 +7,7 @@ When we are conducting hypothesis tests their are two possible errors that can o
 | $ $ | $H_0$ is true | $H_0$ is false |
 | --- | --- | --- |
 | **Accept** $H_0$ | OK | Type II error |
-| **Reject** $H_0$ | Type I error | OK |
+| **Reject** $H_0$ | Type I error / Size | OK / Power |
 
 #### Probability of an error
 To find the probability of an error do the following:
