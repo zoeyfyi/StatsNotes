@@ -4,15 +4,15 @@
 
 When we are conducting hypothesis tests their are two possible errors that can occur.
 
-| $ $ | $H_0$ is true | $H_0$ is false |
+| $$ $$ | $$H_0$$ is true | $$H_0$$ is false |
 | --- | --- | --- |
-| **Accept** $H_0$ | OK | Type II error |
-| **Reject** $H_0$ | Type I error / Size | OK / Power |
+| **Accept** $$H_0$$ | OK | Type II error |
+| **Reject** $$H_0$$ | Type I error / Size | OK / Power |
 
 #### Probability of an error
 To find the probability of an error do the following:
 
-Given $H_0: p = \frac{1}{4}$, $H_1: p > \frac{1}{4}$, $\text{critical region}: X \geq 9$ and $X \sim B(20, \frac{1}{4})$
+Given $$H_0: p = \frac{1}{4}$$, $$H_1: p > \frac{1}{4}$$, $$\text{critical region}: X \geq 9$$ and $$X \sim B(20, \frac{1}{4})$$
 
 $$
 \begin{align}
