@@ -3,4 +3,12 @@ dist: trusty
 before_install:
 - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
 script:
-- pdflatex -interaction=nonstopmode -halt-on-error *.tex
+- pdflatex -interaction=nonstopmode -halt-on-error src/main.tex
+- ls -a
+deploy:
+  provider: releases
+  api_key:
+    secure: ibzimQcptQEQHY1OWc3NY3frCZ5CpvdoA58nHerroqfA8gAGVOs0ZEGS/KHXO/8mbtsovCiPEnhG46Fu+J3XxHswXRtL5L7lEiP8fOjolhmczqbYxNebs0y4YmLAt92t1G7sQsXRbnAYLztP7VcuG963ArIm4YsOrjfd+acSES+NjjD7VQ+XtZutD6LZNNnUWRl3NkgKCekqnBGYEgXyNaSRKxQxC7Zsn7AS9dreSo3xjTX41NK0T/Cv5OxdEEuuqJVOOC4fAT+CtVULLWry/z5Lhqa6Isq9n5nMhKA0OYJ54Yatd9JbPO49aKqj7iKgXV0cM6V6FZWS16nlMnFbqZQ6SyD9rHhTfM0WW0g+eZC/uBzO4iUJ4dZkeDpPGMjqD51XO8AgbBKlzdhwZk35dsDQBiMFBJVe80WVFKFaF81mSboRmSZaBDzTYFJ85z6XgztCQhdfGx+2H1AnEz3JljpJFjwaDabjNP32l2Q21nVZWm6dwY4aHWylpictdp6b9Q7bB30+slF4F0KsOw4pf8P+fGL7HxjydsFDbtehTPt3z//mncD/5T7hEWZqdwMq9pZaCu8D7taOweJYlc0D0bc2GDtmd7k8YxvainbENo+gyYU6nF/L4av3PvOHUYcqboWBWWTE8bZNaihn5exDBkrRj3uO1VwUB/yukmgpvo0=
+  file: main.pdf
+  on:
+    repo: bongo227/StatsNotes
