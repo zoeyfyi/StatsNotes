@@ -1,0 +1,29 @@
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+\definecolor{shadecolor}{rgb}{0.95,0.95,0.95}
+
+\newenvironment{example}[1]
+{
+    \begin{shaded*}
+    \setlength{\parindent}{0cm}
+    {\large \textbf{Example}}\\
+    \\
+    #1
+    
+    \begin{enumerate}
+}
+{
+    \end{enumerate}
+    \end{shaded*}
+}
+
+\newenvironment{step}[1]
+{
+    \item #1
+    \begin{changemargin}{2em}{2em}
+}
+{
+    \end{changemargin}
+}
+
