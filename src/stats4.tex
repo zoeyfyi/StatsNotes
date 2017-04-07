@@ -1,0 +1,145 @@
+\chapter{Statistic 4}
+
+\newpage
+\section{Continuouse Probability Distributions}
+
+    \newpage
+    \subsection{Combination of random varibles}
+    Using the following rules from SS2, given that $X$ and $Y$ are random variables:
+    $$\operatorname{E}(aX \pm bY) = a\operatorname{E}(X) \pm b\operatorname{E}(Y)$$
+    and the following for $X$ and $Y$ are independent random variables
+    $$
+    \operatorname{Var}(aX \pm bY) = a^2\operatorname{Var}(X) + b^2\operatorname{Var}(Y)
+    $$
+    It follows that, if $X$ and $Y$ are normally distributed:
+    \begin{align*}
+    aX \pm bY &\sim \operatorname{N}(E(aX \pm bX), Var(aX \pm bX))\\
+    &\sim \operatorname{N}(a\operatorname{E}(X) \pm b\operatorname{E}(Y), a^2\operatorname{Var}(X) + b^2\operatorname{Var}(Y))\\
+    &\sim N(a \mu_X \pm b \mu_Y, a^2 \sigma_X^2 + b^2 \sigma_Y^2)
+    \end{align*}
+
+\newpage
+\section{Distributional Approximations}
+
+    \newpage
+    \subsection{Continuity corrections}
+        When we go from a discrete distribution to a continuous distribution, we must account for the discrete nature of the problem in are calculations. For example, let $X$ be the number of heads after 10 flips of a coin, find the $P(X = 4)$. If we approximate the value with a continuose distribution we must find the area under the curve between $0.35$ and $0.45$ since these are the lower and upper limits of $4$.
+
+    \newpage
+    \subsection{Approximating binomial using the Possion distribution}
+        If $n$ is large and $p$ is small the binomial distribution can be approximated by the Possion distribution. Good approximation can also be made with small values of $n$ given that $p$ is small enough.
+        
+        \paragraph{Conditions}
+        \begin{itemize}
+            \item $n > 50$
+            \item $p < 0.1$
+        \end{itemize}
+
+        \begin{example}
+        {
+        Based upon past experience, 1\% of the telephone bills mailed to households are incorrect. If a sample of 20 bills is selected, find the probability that at least one bill will be incorrect.
+        }
+
+        \begin{step}{Find the mean}
+        \begin{align*}
+        \mu &= \lambda\\
+        &= np\\
+        &= 20 * 0.01\\
+        &= 0.2
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Approximate using Poisson}
+        \begin{align*}
+        X &\sim Po(0.2)\\
+        P(X \geq 1) &= P(X \leq 0)\\
+        &= P(X = 0)\\
+        &= \frac{e^{-0.2} \times \lambda^0}{0!}\\
+        &= 0.819
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Approximating binomial using the normal distribution}
+        Central limit therom states the means of random samples are approximately normally distributed given $n$ is large enough. The total number of successes for a binomial distribution is the mean multiplied by the number of trails hence the normal distribution can be uses as an approximation for the binomal distribution.
+
+        \paragraph{Conditions}
+        \begin{itemize}
+            \item $n > 50$
+            \item $np > 10$
+            \item $p \leq 0.5$ (invert the definition of success if this is not true)
+        \end{itemize}
+
+        \begin{example}
+        {
+        Suppose that a sample of $n = 1600$ tires of the same type are obtained at random from an ongoing production process in which 8\% of all such tires produced are defective. What is the probability that in such a sample 150 or fewer tires will be defective?
+        }
+
+        \begin{step}{Find mean and varience}
+        \begin{align*}
+        \mu &= np\\
+        &= 1600 \times 0.08 = 128\\
+        \end{align*}
+        \begin{align*}
+        \sigma^2 &= np(1-p)\\
+        &= 1600 \times 0.08 \times (1 - 0.08)\\
+        &= 117.76\\
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Aproximate using normal distribution}
+        \begin{align*}
+        Z &= \frac{X - \mu}{\sigma} \\
+        &= \frac{150.5 - 128}{\sqrt{117.76}}\\
+        &= 2.073\\
+        P(Z < 2.073) &= 0.981
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Approximating Possion using the normal distribution}
+        Central limit therom may also be used to justify approximating Possion using the normal distribution given that $\lambda$ is large enough.
+
+        \paragraph{Conditions}
+        \begin{itemize}
+            \item $\lambda \geq 10$
+        \end{itemize}
+
+        \begin{example}
+        {
+            Suppose that at a certain automobile plant the average number of work stoppages per day due to equipment problems during the production process is 12.0. What is the approximate probability of having 15 or fewer work stoppages due to equipment problems on any given day?
+        }
+
+        \begin{step}{Find the mean and variance}
+        \begin{align*}
+        \mu &= \lambda\\
+        &= 12\\
+        \end{align*}
+        \begin{align*}
+        \sigma^2 &= \lambda\\
+        &= 12\\
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Aproximate using normal distribution}
+        \begin{align*}
+        Z &= \frac{X - \mu}{\sigma} \\
+        &=\frac{15.5 - 12}{\sqrt{12}}\\
+        &= 1.010\\
+        P(Z < 1.010) &= 0.844\\
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+\newpage
+\section{Estimation in a Real-world Context}
+
+
+
+\newpage
+\section{Application of Hypothesis Testing}
