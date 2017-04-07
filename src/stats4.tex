@@ -214,3 +214,146 @@
 
 \newpage
 \section{Application of Hypothesis Testing}
+
+    \newpage
+    \subsection{t-distribtion hypothesis test}
+        In the same way we can use the t-distribution to find the confidence interval for a small normal sample with unknown varience, we can use the t-distribution to test the mean.
+
+        \begin{example}
+        {
+            Let $n = 20$, $\sum{x} = 21.7$, $\sum{x^2} = 28.4$. Test the mean is larger than 1.00 at a 10\% significance level.
+        }
+
+        \begin{step}{Hypothesis}
+        \begin{align*}
+        H_0&: \mu = 1.00\\
+        H_1&: \mu > 1.00
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Test statistic}
+        \begin{align*}
+        \bar{x} &= \frac{21.7}{20} = 1.085 \\
+        s &= \sqrt{\frac{1}{20 - 1} \times (28.4 - \frac{21.7^2}{20})} = 0.5055 \\ 
+        \\
+        \text{test statistic} &= \frac{1.085 - 1}{\frac{0.5055}{\sqrt{20}}} \\
+        &= 0.752
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Critical value}
+        \begin{align*}
+        t &= t_{19}(0.90) \\ 
+        &= 1.3278
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Conclusion}
+        $0.752 < 1.3278$ so accept $H_0$ and reject $H_1$, their is not evidence to support the statement that the mean is larger than one.
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Poisson hypothesis test}
+        A hypothesis test using the possion distribution is very simular previous hypothesis tests.
+
+        \paragraph{Process}
+        \begin{itemize}
+        \item Hypothesis
+        \item Find the propability that the mean is $\geq$ the sample
+        \item Compare this with significance level, if it is less than the significance level reject $H_0$
+        \end{itemize}
+
+        \begin{example}
+        {
+            Last year their was an average of 8 complaint emails per week. On the first week of next year 16 complaints were received. Test at the 5\% level, weather the mean number of complaints has increased.
+        }
+
+        \begin{step}{Hypothesis}
+        \begin{align*}
+        H_0&: \mu = 8 \\ 
+        H_1&: \mu > 8
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Test statistic}
+        $$ X \sim Po(8) $$
+        \begin{align*} 
+        P(X \geq 16) &= 1 - P(X \leq 15) \\ 
+        &= 0.00823 
+        \end{align*}         
+        \end{step}
+
+        \begin{step}{Conclusion}
+            $0.00823 < 0.05$ so reject $H_0$, the is no evidence to support the mean number of emails has increased.
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Test for proportion}
+        The test of proportion test the population parameter $p$ (proportion) in a given sample, to access whether the sample represents the true proportion of the entire population.
+
+        \paragraph{Process}
+        \begin{itemize}
+        \item Hypothesis
+        \item Find the probability that the distribtion $B(n, p)$ is less than the sample
+        \item Compare with the significance level, if it is less than the significance level, reject $H_0$
+        \end{itemize}
+    
+        \subsubsection{Example (no approximation)}
+        \begin{example}
+        {
+            40\% of passengers rated an airliners food bad. The airliner claimed to improve the food and re ran the survey, after which 6 out of 20 passengers said the food was bad. Test at a 5\% significance level if the rating the meal bad had reduced.
+        }
+
+        \begin{step}{Hypothesis}
+        $H_0: p = 0.4$ \\
+        $H_1: p < 0.4$
+        \end{step}
+
+        \begin{step}{Probability}
+        $$X \sim B(20, 0.4)$$
+        $$P(X \leq 6) = 0.250$$
+        \end{step}
+
+        \begin{step}{Conclusion}
+        $0.250 > 0.05$ so accept $H_0$, no evidence that the proportion of passengers rating the meal bad had reduced.
+        \end{step}
+
+        \end{example}
+
+        \subsubsection{Example (with approximation)}
+        \begin{example}
+        {
+            Past experience suggests that 40\% of households donate to charity. In a sample 1240 households where asked if they donate, 476 had. Test the hypothesis that the number of households that donate is 40\%.
+        }
+
+        \begin{step}{Hypothesis}
+        $H_0: p = 0.4$\\ 
+        $H_1: p \ne 0.4$
+        \end{step}
+
+        \begin{step}{Test statistic}
+        $$X \sim B(1240, 0.4)$$ 
+        \begin{align*}
+        \mu &= 1240 \times 0.4 = 496\\
+        \sigma^2 &= 1240 \times 0.4(1 - 0.4)\\
+        \end{align*}
+        $$X \approx N(496, 297.6)$$
+        \begin{align*}
+        z &= \frac{476.5 - 496}{\sqrt{297.6}} \\
+          &= -1.13
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Critical value}
+        $$ \text{critical value} = \pm 1.96 $$
+        \end{step}
+
+        \begin{step}{Conclusion}
+        $-1.96 < -1.13 < 1.96$ so accept $H_0$, evidence to support claim that 40\% of households make a donation.
+        \end{step}
+
+        \end{example}
