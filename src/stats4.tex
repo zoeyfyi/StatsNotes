@@ -1,7 +1,7 @@
 \chapter{Statistic 4}
 
 \newpage
-\section{Continuouse Probability Distributions}
+\section{Continuous Probability Distributions}
 
     \newpage
     \subsection{Combination of random varibles}
@@ -139,7 +139,78 @@
 \newpage
 \section{Estimation in a Real-world Context}
 
+    \newpage
+    \subsection{Students t-distribution}
+        If the population variance is unknown due to central limit therom we know that $X$ follows a normal distribution given $n$ is large:
+        $$\frac{\bar{X} - \mu}{\displaystyle\frac{S}{\sqrt{n}}} \approx N(0, 1^2)$$
+        \\
+        However if $n$ is small we can use t-distribution to get a better estimate. 
+        $$\frac{\bar{X} - \mu}{\displaystyle\frac{S}{\sqrt{n}}} \approx t_{n-1}\text{-distribution}$$
 
+    \newpage
+    \subsection{Confidence intervals using the t-distribution}
+        If we have a small sample of values and we assume they came from a normal distribution, we can use the t-distribution to find the confidence interval for the sample using: $$ \bar{x} \pm t_{n-1}(\alpha) \times \frac{s}{\sqrt{n}} $$ where $\bar{x}$ is the sample mean, $n$ is the sample size, $\alpha$ is $\displaystyle\frac{1 - \text{significance level}}{2}$ and $s$ is the sample standard deviation.
+    
+        Example
+        \begin{example}
+        {
+            Let $n = 26$, $\bar{x} = 122$ and $s^2 = 225$. Calculate a 95\% confidence interval.
+        }
+
+        \begin{step}{Solve}
+        \begin{align*} 
+        122 \pm t_{26-1}(0.025) \times \frac{\sqrt{225}}{\sqrt{26}} &= 122 \pm 2.060 \times 3.132 \\ 
+        &= (115.941, 128.059)\\
+        &= (116, 128) 
+        \end{align*}         
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Confidence intervals for Poisson}
+        For an observation from a Poisson distribution we know that we can approximate it to a normal distribution, given $\lambda$ is large enough. Given this, it can be show that the approximate confidence interval for a single observation would be: 
+        $$ \lambda \pm z \times \sqrt{\lambda} $$ 
+        where $z$ is the Z-value for the significance level. Note the confidence interval is an approximate since the is based of the normal distribution.
+
+        \begin{example}
+        {
+            Voters arrived between 6pm and 9pm. In the first hour 51 voters showed up. Assuing the arrivals can be moddled by a poisson distribution, calculate a 95\% confidence interval.
+        }
+
+        % TODO: create an example enviroment without steps
+        \begin{step}{Solve}
+        $$ 51 \pm 1.96 \times \sqrt{51} = (37.0, 65.0) $$
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Confidence itervals for a proportion}
+        The parameter $p$ of a binomial distribution is the proportion of successes and its exact confidece interval can be obtained. Given an estimator for the proportion $\hat{p}$ we can caluate the confidence interval for the population proportion using: 
+        $$\hat{p} \pm z \times \left(\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right)$$ 
+        where $z$ is the Z-value for the significance level
+
+        \begin{example}
+        {
+            Marzena buys Simsons matches. Of a random sample of 85 such matches, 27 broke when he struck them. Calculate an approximate 95\% confidence interval for the proportion of Simsons matches which will break when Marzena strikes them.
+        }
+
+        \begin{step}{Calculate $\hat{p}$}
+        \begin{align*}
+        \hat{p} &= \frac{27}{85} \\
+                   &= 0.31765
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Find the confidence interval}
+        \begin{align*}
+        0.31765 &\pm 1.96 \times \sqrt{\frac{0.31765(1-0.31765)}{85}} \\ 
+        0.31765 &\pm 0.09897\ (0.219, 0.417) 
+        \end{align*}
+        \end{step}
+
+        \end{example}
 
 \newpage
 \section{Application of Hypothesis Testing}
