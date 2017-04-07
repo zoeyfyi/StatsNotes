@@ -1,0 +1,359 @@
+\chapter{Statistic 4}
+
+\newpage
+\section{Continuous Probability Distributions}
+
+    \newpage
+    \subsection{Combination of random varibles}
+    Using the following rules from SS2, given that $X$ and $Y$ are random variables:
+    $$\operatorname{E}(aX \pm bY) = a\operatorname{E}(X) \pm b\operatorname{E}(Y)$$
+    and the following for $X$ and $Y$ are independent random variables
+    $$
+    \operatorname{Var}(aX \pm bY) = a^2\operatorname{Var}(X) + b^2\operatorname{Var}(Y)
+    $$
+    It follows that, if $X$ and $Y$ are normally distributed:
+    \begin{align*}
+    aX \pm bY &\sim \operatorname{N}(E(aX \pm bX), Var(aX \pm bX))\\
+    &\sim \operatorname{N}(a\operatorname{E}(X) \pm b\operatorname{E}(Y), a^2\operatorname{Var}(X) + b^2\operatorname{Var}(Y))\\
+    &\sim N(a \mu_X \pm b \mu_Y, a^2 \sigma_X^2 + b^2 \sigma_Y^2)
+    \end{align*}
+
+\newpage
+\section{Distributional Approximations}
+
+    \newpage
+    \subsection{Continuity corrections}
+        When we go from a discrete distribution to a continuous distribution, we must account for the discrete nature of the problem in are calculations. For example, let $X$ be the number of heads after 10 flips of a coin, find the $P(X = 4)$. If we approximate the value with a continuose distribution we must find the area under the curve between $0.35$ and $0.45$ since these are the lower and upper limits of $4$.
+
+    \newpage
+    \subsection{Approximating binomial using the Possion distribution}
+        If $n$ is large and $p$ is small the binomial distribution can be approximated by the Possion distribution. Good approximation can also be made with small values of $n$ given that $p$ is small enough.
+        
+        \paragraph{Conditions}
+        \begin{itemize}
+            \item $n > 50$
+            \item $p < 0.1$
+        \end{itemize}
+
+        \begin{example}
+        {
+        Based upon past experience, 1\% of the telephone bills mailed to households are incorrect. If a sample of 20 bills is selected, find the probability that at least one bill will be incorrect.
+        }
+
+        \begin{step}{Find the mean}
+        \begin{align*}
+        \mu &= \lambda\\
+        &= np\\
+        &= 20 * 0.01\\
+        &= 0.2
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Approximate using Poisson}
+        \begin{align*}
+        X &\sim Po(0.2)\\
+        P(X \geq 1) &= P(X \leq 0)\\
+        &= P(X = 0)\\
+        &= \frac{e^{-0.2} \times \lambda^0}{0!}\\
+        &= 0.819
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Approximating binomial using the normal distribution}
+        Central limit therom states the means of random samples are approximately normally distributed given $n$ is large enough. The total number of successes for a binomial distribution is the mean multiplied by the number of trails hence the normal distribution can be uses as an approximation for the binomal distribution.
+
+        \paragraph{Conditions}
+        \begin{itemize}
+            \item $n > 50$
+            \item $np > 10$
+            \item $p \leq 0.5$ (invert the definition of success if this is not true)
+        \end{itemize}
+
+        \begin{example}
+        {
+        Suppose that a sample of $n = 1600$ tires of the same type are obtained at random from an ongoing production process in which 8\% of all such tires produced are defective. What is the probability that in such a sample 150 or fewer tires will be defective?
+        }
+
+        \begin{step}{Find mean and varience}
+        \begin{align*}
+        \mu &= np\\
+        &= 1600 \times 0.08 = 128\\
+        \end{align*}
+        \begin{align*}
+        \sigma^2 &= np(1-p)\\
+        &= 1600 \times 0.08 \times (1 - 0.08)\\
+        &= 117.76\\
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Aproximate using normal distribution}
+        \begin{align*}
+        Z &= \frac{X - \mu}{\sigma} \\
+        &= \frac{150.5 - 128}{\sqrt{117.76}}\\
+        &= 2.073\\
+        P(Z < 2.073) &= 0.981
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Approximating Possion using the normal distribution}
+        Central limit therom may also be used to justify approximating Possion using the normal distribution given that $\lambda$ is large enough.
+
+        \paragraph{Conditions}
+        \begin{itemize}
+            \item $\lambda \geq 10$
+        \end{itemize}
+
+        \begin{example}
+        {
+            Suppose that at a certain automobile plant the average number of work stoppages per day due to equipment problems during the production process is 12.0. What is the approximate probability of having 15 or fewer work stoppages due to equipment problems on any given day?
+        }
+
+        \begin{step}{Find the mean and variance}
+        \begin{align*}
+        \mu &= \lambda\\
+        &= 12\\
+        \end{align*}
+        \begin{align*}
+        \sigma^2 &= \lambda\\
+        &= 12\\
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Aproximate using normal distribution}
+        \begin{align*}
+        Z &= \frac{X - \mu}{\sigma} \\
+        &=\frac{15.5 - 12}{\sqrt{12}}\\
+        &= 1.010\\
+        P(Z < 1.010) &= 0.844\\
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+\newpage
+\section{Estimation in a Real-world Context}
+
+    \newpage
+    \subsection{Students t-distribution}
+        If the population variance is unknown due to central limit therom we know that $X$ follows a normal distribution given $n$ is large:
+        $$\frac{\bar{X} - \mu}{\displaystyle\frac{S}{\sqrt{n}}} \approx N(0, 1^2)$$
+        \\
+        However if $n$ is small we can use t-distribution to get a better estimate. 
+        $$\frac{\bar{X} - \mu}{\displaystyle\frac{S}{\sqrt{n}}} \approx t_{n-1}\text{-distribution}$$
+
+    \newpage
+    \subsection{Confidence intervals using the t-distribution}
+        If we have a small sample of values and we assume they came from a normal distribution, we can use the t-distribution to find the confidence interval for the sample using: $$ \bar{x} \pm t_{n-1}(\alpha) \times \frac{s}{\sqrt{n}} $$ where $\bar{x}$ is the sample mean, $n$ is the sample size, $\alpha$ is $\displaystyle\frac{1 - \text{significance level}}{2}$ and $s$ is the sample standard deviation.
+    
+        Example
+        \begin{example}
+        {
+            Let $n = 26$, $\bar{x} = 122$ and $s^2 = 225$. Calculate a 95\% confidence interval.
+        }
+
+        \begin{step}{Solve}
+        \begin{align*} 
+        122 \pm t_{26-1}(0.025) \times \frac{\sqrt{225}}{\sqrt{26}} &= 122 \pm 2.060 \times 3.132 \\ 
+        &= (115.941, 128.059)\\
+        &= (116, 128) 
+        \end{align*}         
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Confidence intervals for Poisson}
+        For an observation from a Poisson distribution we know that we can approximate it to a normal distribution, given $\lambda$ is large enough. Given this, it can be show that the approximate confidence interval for a single observation would be: 
+        $$ \lambda \pm z \times \sqrt{\lambda} $$ 
+        where $z$ is the Z-value for the significance level. Note the confidence interval is an approximate since the is based of the normal distribution.
+
+        \begin{example}
+        {
+            Voters arrived between 6pm and 9pm. In the first hour 51 voters showed up. Assuing the arrivals can be moddled by a poisson distribution, calculate a 95\% confidence interval.
+        }
+
+        % TODO: create an example enviroment without steps
+        \begin{step}{Solve}
+        $$ 51 \pm 1.96 \times \sqrt{51} = (37.0, 65.0) $$
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Confidence itervals for a proportion}
+        The parameter $p$ of a binomial distribution is the proportion of successes and its exact confidece interval can be obtained. Given an estimator for the proportion $\hat{p}$ we can caluate the confidence interval for the population proportion using: 
+        $$\hat{p} \pm z \times \left(\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right)$$ 
+        where $z$ is the Z-value for the significance level
+
+        \begin{example}
+        {
+            Marzena buys Simsons matches. Of a random sample of 85 such matches, 27 broke when he struck them. Calculate an approximate 95\% confidence interval for the proportion of Simsons matches which will break when Marzena strikes them.
+        }
+
+        \begin{step}{Calculate $\hat{p}$}
+        \begin{align*}
+        \hat{p} &= \frac{27}{85} \\
+                &= 0.31765
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Find the confidence interval}
+        \begin{align*}
+        0.31765 &\pm 1.96 \times \sqrt{\frac{0.31765(1-0.31765)}{85}} \\ 
+        0.31765 &\pm 0.09897\ (0.219, 0.417) 
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+\newpage
+\section{Application of Hypothesis Testing}
+
+    \newpage
+    \subsection{t-distribtion hypothesis test}
+        In the same way we can use the t-distribution to find the confidence interval for a small normal sample with unknown varience, we can use the t-distribution to test the mean.
+
+        \begin{example}
+        {
+            Let $n = 20$, $\sum{x} = 21.7$, $\sum{x^2} = 28.4$. Test the mean is larger than 1.00 at a 10\% significance level.
+        }
+
+        \begin{step}{Hypothesis}
+        \begin{align*}
+        H_0&: \mu = 1.00\\
+        H_1&: \mu > 1.00
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Test statistic}
+        \begin{align*}
+        \bar{x} &= \frac{21.7}{20} = 1.085 \\
+        s &= \sqrt{\frac{1}{20 - 1} \times (28.4 - \frac{21.7^2}{20})} = 0.5055 \\ 
+        \\
+        \text{test statistic} &= \frac{1.085 - 1}{\frac{0.5055}{\sqrt{20}}} \\
+        &= 0.752
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Critical value}
+        \begin{align*}
+        t &= t_{19}(0.90) \\ 
+        &= 1.3278
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Conclusion}
+        $0.752 < 1.3278$ so accept $H_0$ and reject $H_1$, their is not evidence to support the statement that the mean is larger than one.
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Poisson hypothesis test}
+        A hypothesis test using the possion distribution is very simular previous hypothesis tests.
+
+        \paragraph{Process}
+        \begin{itemize}
+        \item Hypothesis
+        \item Find the propability that the mean is $\geq$ the sample
+        \item Compare this with significance level, if it is less than the significance level reject $H_0$
+        \end{itemize}
+
+        \begin{example}
+        {
+            Last year their was an average of 8 complaint emails per week. On the first week of next year 16 complaints were received. Test at the 5\% level, weather the mean number of complaints has increased.
+        }
+
+        \begin{step}{Hypothesis}
+        \begin{align*}
+        H_0&: \mu = 8 \\ 
+        H_1&: \mu > 8
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Test statistic}
+        $$ X \sim Po(8) $$
+        \begin{align*} 
+        P(X \geq 16) &= 1 - P(X \leq 15) \\ 
+        &= 0.00823 
+        \end{align*}         
+        \end{step}
+
+        \begin{step}{Conclusion}
+            $0.00823 < 0.05$ so reject $H_0$, the is no evidence to support the mean number of emails has increased.
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Test for proportion}
+        The test of proportion test the population parameter $p$ (proportion) in a given sample, to access whether the sample represents the true proportion of the entire population.
+
+        \paragraph{Process}
+        \begin{itemize}
+        \item Hypothesis
+        \item Find the probability that the distribtion $B(n, p)$ is less than the sample
+        \item Compare with the significance level, if it is less than the significance level, reject $H_0$
+        \end{itemize}
+    
+        \subsubsection{Example (no approximation)}
+        \begin{example}
+        {
+            40\% of passengers rated an airliners food bad. The airliner claimed to improve the food and re ran the survey, after which 6 out of 20 passengers said the food was bad. Test at a 5\% significance level if the rating the meal bad had reduced.
+        }
+
+        \begin{step}{Hypothesis}
+        $H_0: p = 0.4$ \\
+        $H_1: p < 0.4$
+        \end{step}
+
+        \begin{step}{Probability}
+        $$X \sim B(20, 0.4)$$
+        $$P(X \leq 6) = 0.250$$
+        \end{step}
+
+        \begin{step}{Conclusion}
+        $0.250 > 0.05$ so accept $H_0$, no evidence that the proportion of passengers rating the meal bad had reduced.
+        \end{step}
+
+        \end{example}
+
+        \subsubsection{Example (with approximation)}
+        \begin{example}
+        {
+            Past experience suggests that 40\% of households donate to charity. In a sample 1240 households where asked if they donate, 476 had. Test the hypothesis that the number of households that donate is 40\%.
+        }
+
+        \begin{step}{Hypothesis}
+        $H_0: p = 0.4$\\ 
+        $H_1: p \ne 0.4$
+        \end{step}
+
+        \begin{step}{Test statistic}
+        $$X \sim B(1240, 0.4)$$ 
+        \begin{align*}
+        \mu &= 1240 \times 0.4 = 496\\
+        \sigma^2 &= 1240 \times 0.4(1 - 0.4)\\
+        \end{align*}
+        $$X \approx N(496, 297.6)$$
+        \begin{align*}
+        z &= \frac{476.5 - 496}{\sqrt{297.6}} \\
+          &= -1.13
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Critical value}
+        $$ \text{critical value} = \pm 1.96 $$
+        \end{step}
+
+        \begin{step}{Conclusion}
+        $-1.96 < -1.13 < 1.96$ so accept $H_0$, evidence to support claim that 40\% of households make a donation.
+        \end{step}
+
+        \end{example}
