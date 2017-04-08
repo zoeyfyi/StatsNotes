@@ -1,1 +1,122 @@
 \chapter*{Statistics 5}
+
+\newpage
+\section{Continuous Probability Distributions}
+
+    \newpage
+    \subsection{Rectanglular Distribution}
+        The rectangular distribution is a random variable that takes any value in given range within an interval, the pdf of which is:
+        $$
+        f(x) = 
+        \begin{cases}
+        \frac{1}{b - a} & a \leq x \leq b\\
+        0 & \text{otherwise}
+        \end{cases}
+        $$
+        The mean and varience are given by:
+        $$\operatorname{E}(x) = \frac{b + a}{2}$$
+        $$\operatorname{Var}(x) = \frac{(b - a)^2}{12}$$
+        And the cumulative distribution function can be found by integrating $f(x)$ between x and the lower bound.
+
+        \begin{example}
+        {
+            Given $
+            f(x) = 
+            \begin{cases}
+                \frac{1}{6} & -2 \leq x \leq 4\\
+                0 & \text{otherwise}
+            \end{cases}
+            $
+        }
+
+        \begin{step}{Find the mean}
+        \begin{align*}
+        E(x) &= \frac{4 + -2}{2} \\
+             &= 1
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Find the varience}
+        \begin{align*}
+        Var(x) &= \frac{(4 - -2)^2}{12} \\
+               &= 3
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Find the value of $P(|X| < 1)$}
+        \begin{align*}
+        P(|X| < 1) &= P(-1 < X < 1) \\
+                   &= 2 \times \frac{1}{6} \\
+                   &= \frac{1}{3}
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Exponential Distribution}
+        The exponential distribution is the interval between the successive events of a Poisson distribution. Its density function is as follows:
+        $$
+        f(x)
+        \begin{cases}
+        \lambda e^{-\lambda x} & x > 0\\
+        0 & \text{otherwise}\\
+        \end{cases}
+        $$
+        where lambda is the parameter of the exponential distribution. The mean and varience are given by:
+        $$\operatorname{E}(x) = \frac{1}{\lambda}$$
+        $$\operatorname{Var}(x) = \frac{1}{\lambda}$$
+        If you integrate between $0$ and $x$, you can find the cumulative distribution function:
+        \begin{align*}
+        \int^{x}_{0}{\lambda e^{-\lambda x}}
+        &= [-e^{-\lambda x}]^x_0\\
+        &= [-e^{-\lambda x} -- e^{0}]^x_0\\
+        &= [-e^{-\lambda x} + 1]\\
+        &= 1 - e^{-\lambda x}
+        \end{align*}
+
+        \begin{example}
+        {
+        The number of cars passing a point per minute is 0.8. Find the probability that the interval between two cars is longer than 2 minuets.
+        }
+
+        \begin{step}{Define the density function}
+        $$
+        F(x) = 1 - e^{-0.8x}
+        $$
+        \end{step}
+
+        \begin{step}{Find the probabilty}
+        \begin{align*}
+        F(\infty) - F(2) 
+        &= (1 - e^{-0.8 \times \infty}) - (1 - e^{-0.8 \times 2})\\
+        &= (1 - 0) - (1 - e^{-1.6})\\
+        &= 0.202
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+\newpage
+\section{Estimation}
+
+    \newpage
+    \subsection{Confindence interval for varience}
+
+\newpage
+\section{Hypothesis Testing}
+
+    \newpage
+    \subsection{Test for varience}
+    
+    \newpage
+    \subsection{F-distribution}
+    
+    \newpage
+    \subsection{Test for varience equality}
+    
+    \newpage
+    \subsection{Test for mean equailty}
+    
+    \newpage
+    \subsection{Goodness of fit test}
