@@ -1,0 +1,658 @@
+\chapter*{Statistics 5}
+
+\newpage
+\section{Continuous Probability Distributions}
+
+    \newpage
+    \subsection{Rectanglular Distribution}
+        The rectangular distribution is a random variable that takes any value in given range within an interval, the pdf of which is:
+        $$
+        f(x) = 
+        \begin{cases}
+        \frac{1}{b - a} & a \leq x \leq b\\
+        0 & \text{otherwise}
+        \end{cases}
+        $$
+        The mean and varience are given by:
+        $$\operatorname{E}(x) = \frac{b + a}{2}$$
+        $$\operatorname{Var}(x) = \frac{(b - a)^2}{12}$$
+        And the cumulative distribution function can be found by integrating $f(x)$ between x and the lower bound.
+
+        \begin{example}
+        {
+            Given $
+            f(x) = 
+            \begin{cases}
+                \frac{1}{6} & -2 \leq x \leq 4\\
+                0 & \text{otherwise}
+            \end{cases}
+            $
+        }
+
+        \begin{step}{Find the mean}
+        \begin{align*}
+        E(x) &= \frac{4 + -2}{2} \\
+             &= 1
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Find the varience}
+        \begin{align*}
+        Var(x) &= \frac{(4 - -2)^2}{12} \\
+               &= 3
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Find the value of $P(|X| < 1)$}
+        \begin{align*}
+        P(|X| < 1) &= P(-1 < X < 1) \\
+                   &= 2 \times \frac{1}{6} \\
+                   &= \frac{1}{3}
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Exponential Distribution}
+        The exponential distribution is the interval between the successive events of a Poisson distribution. Its density function is as follows:
+        $$
+        f(x)
+        \begin{cases}
+        \lambda e^{-\lambda x} & x > 0\\
+        0 & \text{otherwise}\\
+        \end{cases}
+        $$
+        where lambda is the parameter of the exponential distribution. The mean and varience are given by:
+        $$\operatorname{E}(x) = \frac{1}{\lambda}$$
+        $$\operatorname{Var}(x) = \frac{1}{\lambda}$$
+        If you integrate between $0$ and $x$, you can find the cumulative distribution function:
+        \begin{align*}
+        \int^{x}_{0}{\lambda e^{-\lambda x}}
+        &= [-e^{-\lambda x}]^x_0\\
+        &= [-e^{-\lambda x} -- e^{0}]^x_0\\
+        &= [-e^{-\lambda x} + 1]\\
+        &= 1 - e^{-\lambda x}
+        \end{align*}
+
+        \begin{example}
+        {
+        The number of cars passing a point per minute is 0.8. Find the probability that the interval between two cars is longer than 2 minuets.
+        }
+
+        \begin{step}{Define the density function}
+        $$
+        F(x) = 1 - e^{-0.8x}
+        $$
+        \end{step}
+
+        \begin{step}{Find the probabilty}
+        \begin{align*}
+        F(\infty) - F(2) 
+        &= (1 - e^{-0.8 \times \infty}) - (1 - e^{-0.8 \times 2})\\
+        &= (1 - 0) - (1 - e^{-1.6})\\
+        &= 0.202
+        \end{align*}
+        \end{step}
+
+        \end{example}
+
+\newpage
+\section{Estimation}
+
+    \newpage
+    \subsection{Confindence interval for varience}
+        For a random sample of $N(\mu, \sigma^2)$ it can be shown that $\displaystyle\frac{(n-1)s^2}{\sigma^2} \sim \chi^2_{n-1}$ where $n$ is the sample size. Using this we can rearrange the result to find the confidence interval for varience.
+
+        \begin{example}
+        {
+            Calculate a 95\% confidence interval for the mean and variance of the set: 266, 254, 215, 220, 253, 230, 216, 248, 234, 244.
+        }
+
+        \begin{step}{Find the mean and variance}
+        \begin{align*}
+        \bar{x} &= 238 \\
+        s^2 &= 313.111
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Rearrange to find the confidence interval}
+        $$\chi^2_9(0.975) < \frac{(n-1)s^2}{\sigma^2} < \chi^2_9(0.075)$$
+        $$\chi^2_9(0.975) < \frac{9 \times 313.111}{\sigma^2} < \chi^2_9(0.075)$$
+        $$\frac{9 \times 313.111}{\chi^2_9(0.975)} < \sigma^2 < \frac{9 \times 313.111}{\chi^2_9(0.075)}$$
+        $$148.128 < \sigma^2 < 1043.553$$
+        $$(148.128, 1043.553)$$
+        \end{step}
+
+        \end{example}
+
+\newpage
+\section{Hypothesis Testing}
+
+    \newpage
+    \subsection{Test for varience}
+        Just as we can find the confidence interval for the varience of a normal distribution, we can use the $\displaystyle\frac{(n-1)s^2}{\sigma^2}$ as a test statistic (and the $\chi^2$ for the critical value) to test a hypothesis involving the population varience.
+
+        \begin{example}
+        {
+            Some random observations (2.1, 2.3, 3.5, 4.6, 5.0, 6.4, 7.1, 8.6, 8.7, 9.1) are thought to have a variance of 4.1. Test this at a 5\% significance level.
+        }
+        
+        \begin{step}{Hypothesis}
+        $H_0: \sigma^2 = 4.1$\\
+        $H_1: \sigma^2 \ne 4.1$
+        \end{step}
+
+        \begin{step}{Test statistic}
+        \begin{align*} 
+        \bar{x} &= 5.74 \\ 
+        s^2 &= 6.940 
+        \end{align*} 
+
+        $$\frac{(10 - 1) \times 6.940}{4.1} = 15.234$$
+        \end{step}
+
+        \begin{step}{Critical value}
+        \begin{align*} 
+        \chi^2_9(0.975) &= 19.023\\ 
+        \chi^2_9(0.025) &= 2.700
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Conclusion}
+        $2.700 < 15.234 < 19.023$ so accept $H_0$
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{F-distribution}
+        Suppose we take $n_x$ observations from a $N(\mu_x, \sigma_x^2)$ distribution and a independent sample of size $n_y$ from a $N(\mu_y, \sigma_y^2)$ distribution.\\
+        \\
+        From the previous topics, we know $$\frac{(n_x-1)s_x^2}{\sigma_x^2} \sim \chi^2_{n_x-1}$$ and $$\frac{(n_y-1)s_y^2}{\sigma_y^2} \sim \chi^2_{n_y-1}$$
+        \\
+        So if follows that: 
+        $$
+        \dfrac{\dfrac{s_x^2}{\sigma_x^2}}{\dfrac{s_y^2}{\sigma_y^2}} 
+        \sim 
+        \dfrac{\dfrac{\chi^2_{n_x-1}}{(n_x-1)}}{\dfrac{\chi^2_{n_y-1}}{(n_y-1)}}
+        $$ 
+        and 
+        $$ 
+        \dfrac{\dfrac{s_y^2}{\sigma_y^2}}{\dfrac{s_x^2}{\sigma_x^2}} 
+        \sim 
+        \dfrac{\dfrac{\chi^2_{n_y-1}}{(n_y-1)}}{\dfrac{\chi^2_{n_x-1}}{(n_x-1)}} 
+        $$
+        \\
+        This is the F-distribution and it has two parameters $(n_x - 1)$ and $(n_y - 1)$ usually written as $F_{v1, v2}$ where $v1$ and $v2$ correspond to the two parameters.\\
+        \\
+        If the parameters are the other way round (y on top) we can convert them using the following: 
+        $$ F_{v2, v1} = \frac{1}{F_{v1, v2}} $$
+
+        \begin{example}
+        {
+            $X \sim F_{8, 10}$, find $P(\frac{1}{5.81} < X < 5.06)$
+        }
+
+        \begin{step}{Solve}
+        \begin{align*} 
+        P(\frac{1}{5.81} < X < 5.06) &= P(X < 5.06) - P(X < \frac{1}{5.81})\\ 
+        &= 0.99 - P(F_{10, 8} > 5.81)\\ 
+        &= 0.99 - (1 - P(F_{10, 8} < 5.81))\\ 
+        &= 0.99 - (1 - 0.99)\\ 
+        &= 0.98 
+        \end{align*}         
+        \end{step}
+
+        \end{example}
+        \paragraph{Note}
+        To find the values on the table, look at each F-distribution table and look for the value closest to the right hand side value, in this case $5.057$ (which rounds to $5.06$) was found on the $p = 0.99$ table.
+
+    \newpage
+    \subsection{Test for varience equality}
+        We can use the F-distribution to test if the two samples varience's are the same. If we assume $\sigma^2_x = \sigma^2_y$ then 
+        $$\dfrac{\dfrac{s_y^2}{\sigma_y^2}}{\dfrac{s_x^2}{\sigma_x^2}} \sim F_{n_x-1, n_y-1} $$ 
+        becomes 
+        $$\dfrac{s_y^2}{s_x^2} \sim F_{n_x-1, n_y-1}$$ 
+        which is the test statistic for this hypothesis test.
+
+        \begin{example}
+        {
+            It is believed that wood stored inside has less variable hardness than wood stored outside, conduct a test at a 0.05 significance level stating any assumptions made.
+        }
+
+        \begin{step}{Hypothesis}
+        $H_0: \sigma_o^2 = \sigma_i^2$\\ 
+        $H_1: \sigma_o^2 > \sigma_i^2$
+        \end{step}
+
+        \begin{step}{Test statistic}
+        \begin{align*} 
+        F_{\text{test}} &= \frac{216.25}{198.6}\\ 
+        &= 1.089 
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Critical value}
+        \begin{align*} 
+        F_{\text{crit}} &= F_{25-1, 21-1}(0.05)\\ 
+        &= F_{24, 20}(0.05)\\ 
+        &= 2.08 
+        \end{align*}
+        \end{step}
+
+        \begin{step}{Conclusion}
+        $1.089 < 2.08$ so accept $H_0$, wood stored inside is just as variable as wood stored outside.
+        \end{step}
+
+        \end{example}
+
+    \newpage
+    \subsection{Test for mean equailty}
+
+        \subsubsection{Two-sample z-test}
+            We may be interested in the difference between two independent populations. To test two distributions we can use the rules for combining distributions to derive this test statistic for two normal distributions $X$ and $Y$: 
+            $$Z = \frac{\bar{X} - \bar{Y} - (\mu_x - \mu_y)} {\sqrt{\dfrac{\sigma_x^2}{n_x}+\dfrac{\sigma_y^2}{n_y}}} $$
+            If $n_x$ and $n_y$ are larger enough, this statistic can be used for distributions where $X$ and $Y$ are not normal due to central limit therom.
+
+            \begin{example}
+            {
+                A study weighs children in area $A$ and area $B$. The results are as follows:
+                
+                \begin{center}
+                \begin{tabular}{l|c|c|c}
+                    & $n$ & $\bar{x}$ & $s$ \\
+                \hline
+                $A$ & 220 & 37.8      & 3.6 \\
+                $B$ & 180 & 38.6      & 4.1
+                \end{tabular}
+                \end{center}
+                
+                Test (at a 5\% significance level) if their is any difference in the mean weight of children from each area.
+            }
+
+            \begin{step}{Hypothesis}
+            $H_0: \mu_A = \mu_B$ \\ 
+            $H_1: \mu_A \neq \mu_B$
+            \end{step}
+
+            \begin{step}{Test statistic} 
+            \begin{align*} 
+            z &= \frac{\bar{x}_A-\bar{x}_B - (\mu_A - \mu_B)}{\sqrt{\dfrac{\sigma_A^2}{n_A}+\dfrac{\sigma_B^2}{n_B}}}\\ 
+            &= \frac{37.6 - 38.6}{\sqrt{\dfrac{3.6^2}{220}+\dfrac{4.1^2}{180}}}\\ 
+            &= -2.56243...\\ 
+            &= -2.56 
+            \end{align*}
+            \end{step}
+
+            \begin{step}{Critical value}
+            $$z = \pm1.96$$
+            \end{step}
+
+            \begin{step}{Conclusion}
+            Since $-2.56 < -1.96$, the result is significant so reject $H_0$, their is evidence that the mean weight is different in the two areas.
+            \end{step}
+
+            \end{example}
+            
+        \newpage
+        \subsubsection{Two-sample t-test}
+            In the case were the varience is unknow but equal we can use a simular test for two samples from small normal populations.
+
+            $$
+            \frac{\bar{X} - \bar{Y} - (\mu_x - \mu_y)}{\sqrt{\sigma^2\left(\dfrac{1}{n_x} + \dfrac{1}{n_y}\right)}}
+            \sim t_{n_x+n_y-2}
+            $$
+            In the case were $\sigma^2$ is unknow but the unbiased estimators ($s_x^2$ and $s_y^2$) are know, we can pool the estimators using the following formula:
+            $$
+            s_p^2 = \frac{(n_x-1)\times s_x^2 + (n_y-1) \times s_y^2}{n_x + n_y - 2}
+            $$ 
+
+            \begin{example}
+            {
+                Conduct a two sample t-test at a 10\% significance level with the following data:
+
+                \begin{center}
+                \begin{tabular}{l c c c c c c c c c}
+                $X$ & $40$ & $37$ & $45$ & $34$ & $30$ & $41$ & $42$ & $43$ & $36$ \\
+                \hline
+                $Y$ & $38$ & $43$ & $36$ & $45$ & $35$ & $44$ & $41$ \\
+                \end{tabular}
+                \end{center}
+            }
+
+            \begin{step}{Hypothesis}
+            $H_0: \mu_x = \mu_y$ \\ 
+            $H_1: \mu_x \ne \mu_y$ 
+            \end{step}
+
+            \begin{step}{Find the mean and varience of both samples}
+            \begin{align*}
+            n_x &= 9\\ 
+            \bar{x} &= 38.667\\ 
+            s_x^2 &= 23
+            \\
+            \\
+            n_y &= 7\\ 
+            \bar{y} &= 40.286\\ 
+            s_y^2 &= 15.905
+            \end{align*}
+            \end{step}
+
+            \begin{step}{Test statistic}
+            \begin{align*}
+            s_p^2 &= \frac{(9 - 1) \times 23 + (7 - 1) \times 15.905}{9 + 7 - 2} \\
+                &= 19.959
+            \end{align*}
+            \begin{align*}
+            t &= \frac{38.667-40.286}{\sqrt{19.959 \times \left(\dfrac{1}{9} + \dfrac{1}{7}\right)}} \\
+              &= -0.719
+            \end{align*}
+            \end{step}
+
+            \begin{step}{Critical value}
+            \begin{align*}
+            t_{9 + 7 - 2}(0.95) &= t_{14}(0.95)\\ 
+                                &= 1.761 
+            \end{align*}
+            \end{step}
+
+            \begin{step}{Conclusion}
+            $-1.761 < -0.719 < 1.761$ so accept $H_0$, evidence suggests their is no difference in the means of the two groups.
+            \end{step}
+
+            \end{example}
+
+    \newpage
+    \subsection{Goodness of fit test}
+        In SS3 $\displaystyle\sum{\frac{(O - E)^2}{E}}$ was used to analyse contingency tables, but we can also use this statistic to test the fit of a distribution for a particular sample.
+
+        Degrees of freedom is a measure of the data not used up. Every time a statistic is calculated or constraint put in place, a degree of freedom is used. For the purpose of testing the fit of a distribution the total frequency of the model must equal the observed frequency. This is an example of a constraint so we lose a degree of freedom.
+
+        \subsubsection{Discrete distributions}
+            Conditions
+            \begin{itemize}
+                \item The random varible is defined over a set of values
+                \item Each value is equally likely
+            \end{itemize}
+            The degrees of freedom for a goodness of fit test for a discrete distribution is
+            $$v = \text{number of cells} - \text{number of parameters estimated} - 1$$ 
+
+            \begin{example}
+            {
+                The following table shows some observed values:
+                \begin{center}
+                \begin{tabular}{l|c|c|c|c|c|c|c|c}
+                $x$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+                \hline
+                $O_i$ & 12 & 24 & 18 & 20 & 25 & 17 & 21 & 23 \\
+                \end{tabular}
+                \end{center}
+                Conduct a goodness of fit test for weather its a discrete uniform distribution.
+            }
+
+            \begin{step}{Hypothesis}
+            $H_0$: The observations \textit{can} be modeled by a discrete uniform distribution
+
+            $H_1$: The observations \textit{cannot} be modeled by a discrete uniform distribution
+            \end{step}
+
+            \begin{step}{Calculate the expected frequency}
+            \begin{align*}
+            E_i &= \frac{\sum{O_i}}{8} \\
+            &= \frac{160}{8} \\
+            &= 20
+            \end{align*}
+            \end{step}
+
+            \begin{step}{Test statisitic}
+            \begin{center}
+            \begin{tabular}{l|c|c|c|c|c|c|c|c}
+            $x$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+            \hline
+            $O_i$                                    & 12   & 24    & 18    & 20  & 25    & 17    & 21    & 23 \\
+            $E_i$                                    & 20   & 20    & 20    & 20  & 20    & 20    & 20    & 20 \\
+            $\displaystyle\frac{(O_i - E_i)^2}{E_i}$ & 3.2  & 0.8   & 0.2   & 0   & 1.25  & 0.45  & 0.05  & 0.45 \\
+            \end{tabular}
+            \end{center}
+            $$
+            \sum{\frac{(O_i - E_i)^2}{E_i}} = 6.4
+            $$
+            \end{step}
+
+            \begin{step}{Critical value}
+            \begin{align*}
+            v &= 8 - 1 \\
+            &= 7
+            \end{align*}
+            $$
+            \chi^2_7(5\%) = 14.067...
+            $$
+            \end{step}
+
+            \begin{step}{Conclusion}
+            $6.4 < 14.067...$ so accept $H_0$ and reject $H_1$, their is evidence that the observations fits a discrete uniform distribution
+            \end{step}
+            \end{example}
+
+            You can estimate the parameter $p$ of a binomial distribution with: 
+            $$ p = \frac{\text{total number of successes}}{\text{number of trials} \times \text{number of observations}} $$
+            
+            \begin{example}
+            {
+                The following table shows observed and expected values for a binomial model.
+
+                \begin{center}
+                \begin{tabular}{l|c|c|c|c|c|c}
+                $O_i$ & 17 & 28 & 32 & 15 & 5 & 3 \\
+                \hline
+                $E_i$ & 19.69 & 34.74 & 27.58 & 12.98 & 4.01 & 0.99 \\
+                \end{tabular}
+                \end{center}
+
+                Test at a 5\% significance level if the distribution fits a binomial model.
+            }
+
+            \begin{step}{Hypothesis}
+            $H_0$: The observations \textit{can} be modeled by a binomial distribution
+
+            $H_1$: The observations \textit{cannot} be modeled by a binomial distribution
+            \end{step}
+
+            \begin{step}{Test statisitic}
+                Since $E_i < 5$ in the last to columns, we must combine them to work out $\chi^2$:
+
+                \begin{center}
+                \begin{tabular}{l|c|c|c|c|c}
+                $O_i$ & 17 & 28 & 32 & 15 & 9 \\
+                \hline
+                $E_i$ & 19.69 & 34.74 & 27.58 & 12.98 & 5 \\
+                $\displaystyle\frac{(O_i - E_i)^2}{E_i}$ & 0.368 & 1.31 & 0.708 & 0.314 & 1.8 \\
+                \end{tabular}
+                \end{center}
+
+                $$
+                \sum{\frac{(O_i - E_i)^2}{E_i}} = 4.50
+                $$
+            \end{step}
+
+            \begin{step}{Critical value}
+                \begin{align*}
+                v &= 5 - 1 \\
+                   &= 4
+                \end{align*}
+
+                $$
+                \chi^2_4(5\%) = 9.49...
+                $$
+            \end{step}
+
+            \begin{step}{Conclusion}
+                Since $4.50 < 9.49$ so accept $H_0$ and reject $H_1$, their is evidence to suggest the binomial model is a good fit.
+            \end{step}
+
+        \end{example}
+
+        You can estimate $\lambda$ with: $$ \lambda = \frac{\sum{r \times f_r}}{N} $$
+        
+        \begin{example}
+        {
+            Conduct a goodness of fit test between the observed values below and the distribution $Po(2)$
+
+            \begin{center}
+            \begin{tabular}{l|c|c|c|c|c|c|c}
+            $x$ & 0 & 1 & 2 & 3 & 4 & 5 & $>5$ \\
+            \hline
+            $O_i$ & 12 & 23 & 24 & 24 & 12 & 5 & 0 \\
+            \end{tabular}
+            \end{center}
+        }
+
+        \begin{step}{Hypothesis}
+        $H_0$: The observations \textit{can} be modeled by a $Po(2)$ distribution
+
+        $H_1$: The observations \textit{cannot} be modeled by a $Po(2)$ distribution
+        \end{step}
+
+        \begin{step}{Test statistic}
+        Work out $\chi^2$ using expected values from the $Po(2)$ distribution:
+
+        \begin{center}
+        \begin{tabular}{l|c|c|c|c|c|c|c}
+        $x$ & 0 & 1 & 2 & 3 & 4 & 5 & $>5$ \\
+        \hline
+        $E_i$ & 13.53 & 27.07 & 27.07 & 18.04 & 9.02 & 3.61 & 1.66 \\
+        \end{tabular}
+        \end{center}
+
+        Since $E_i < 5$ we combine the last 2 columns:
+
+        \begin{center}
+        \begin{tabular}{l|c|c|c|c|c|c}
+        $x$ & 0 & 1 & 2 & 3 & 4 & $>4$ \\
+        \hline
+        $O_i$ & 12 & 23 & 24 & 24 & 12 & 5 \\
+        $E_i$ & 13.53 & 27.07 & 27.07 & 18.04 & 9.02 & 5.27 \\
+        $\displaystyle\frac{(O_i - E_i)^2}{E_i}$ & 0.173 & 0.612 & 0.348 & 1.969 & 0.985 & 0.0138 \\
+        \end{tabular}
+        \end{center}
+
+        $$
+        \sum{\frac{(O_i - E_i)^2}{E_i}} = 4.10
+        $$
+        \end{step}
+
+        \begin{step}{Critical value}
+        \begin{align*}
+        v &= 6 - 1 \\
+        &= 5
+        \end{align*}
+        $$
+        \chi^2_6(5\%) = 11.07...
+        $$
+        \end{step}
+
+        \begin{step}{Conclusion}
+        Since $4.10 < 11.07$ accept $H_0$ and reject $H_1$, the distribution $Po(2)$ is a good model.
+        \end{step}
+        \end{example}
+
+    \subsubsection{Continuous distributions}
+        For a continuous random variable, it is not possible to list all the values it can take. Therefore we divide the data into classes. 
+
+        \begin{example}
+        {
+            The table below shows the time intervals in seconds between successive white cars in free-flowing traffic on an open raod. Investigate using a 5\% signigiicance level, whether these times can be modelled by an exponential distribution.
+
+            \begin{center}
+            \begin{tabular}{l|c|c|c|c|c|c}
+            Time & 0 - & 20 - & 40 - & 60 - & 90 - & 120 - 180 \\
+            Frequency & 41 & 19 & 16 & 13 & 9 & 2 \\
+            \end{tabular}
+            \end{center}
+        }
+
+        \begin{step}{Hypothesis}
+        $H_0$: The observations \textit{can} be modeled by a exponential distribution
+
+        $H_1$: The observations \textit{cannot} be modeled by a exponential distribution
+        \end{step}
+
+        \begin{step}{Find an estimate for the parameter $\lambda$}
+            \begin{align*}
+            \bar{x} &= \frac{10 + 30 + 50 + 75 + 105 + 150}{6}\\
+                    &= 40
+            \end{align*}
+            The mean of an exponential distribution is $\displaystyle\frac{1}{\lambda}$ so the parameter $\lambda$ is $\displaystyle\frac{1}{40}$
+        \end{step}
+
+        \begin{step}{Find the probability that a value appears in each class}
+            The cumulative probabilty density function for this exponential distribution is
+            $$
+            F(x) = 1 - e^{-\lambda x}
+            $$
+            \begin{align*}
+            P(20) &= 0.3935 \\
+            P(40) - P(20) &= 0.2386 \\
+            P(60) - P(40) &= 0.1448 \\
+            P(90) - P(60) &= 0.1177 \\
+            P(120) - P(90) &= 0.0556 \\
+            P(180) - P(120) &= 0.0387 \\
+            P(\infty) - P(120) &= 0.0111 \\
+            \end{align*}
+        \end{step}
+
+        \begin{step}{Find the expected values for each class}
+        \begin{center}
+        \begin{tabular}{c|c|c|c}
+        Class & $O_i$ & Probability & $E_i$ \\
+        \hline
+        0- & 41 & 0.3935 & 39.35 \\
+        20- & 19 & 0.2386 & 23.86 \\
+        40- & 16 & 0.1448 & 14.48 \\
+        60- & 13 & 0.1177 & 11.77 \\
+        90- & 9 & 0.0556 & 5.56 \\
+        90- & 2 & 0.0387 & 3.87 \\
+        90- & 0 & 0.0556 & 1.11 \\
+        \end{tabular}
+        \end{center}
+
+        Combine last to columns so $E > 5$
+        \begin{center}
+        \begin{tabular}{c|c|c}
+        Class & $O_i$ & $E_i$ \\
+        \hline
+        0- & 41  & 39.35 \\
+        20- & 19 & 23.86 \\
+        40- & 16 & 14.48 \\
+        60- & 13 & 11.77 \\
+        90- & 9  & 5.56 \\
+        90- & 2  & 4.98 \\
+        \end{tabular}
+        \end{center}
+        Note that 4.98 < 5 however combining again would decrease the degree of freedom hence increasing the chance of a type 2 error.
+        \end{step}
+
+        \begin{step}{Test statistic}
+        $$
+        \sum{\frac{(O_i - E_i)^2}{E_i}} = 5.26
+        $$
+        \end{step}
+
+        \begin{step}{Critical value}
+        \begin{align*}
+        v &= 6 - 2 \\
+        &= 4
+        \end{align*}
+        $$
+        \chi^2_4(5\%) = 9.488...
+        $$
+        \end{step}
+
+        \begin{step}{Conclusion}
+        Since $5.26 < 9.488$ accept $H_0$ and reject $H_1$, the exponential distribution with parameter $\lambda = \displaystyle\frac{1}{40}$ is a good model.
+        \end{step}
+
+        \end{example}
+
+
