@@ -612,15 +612,50 @@ This test has 1 factor (model of car) at 3 levels (3 diffrent models).
 
     \subsubsection{Control of means}
         The most common method of statistical process control is to take regular samples and plot them on a control chart as shown in the following diagram:\\
-        \includegraphics[scale=0.125]{controlchart}
+        
+        \newcommand{\xpoint}[2]{
+            \draw[line width=1] (#1-0.1,#2-0.1) -- (#1+0.1, #2+0.1);
+            \draw[line width=1] (#1-0.1,#2+0.1) -- (#1+0.1, #2-0.1);
+        }
+
+        \newcommand{\xpointn}[3]{
+            \draw[line width=1] (#1-0.1,#2-0.1) -- (#1+0.1, #2+0.1);
+            \draw[line width=1] (#1-0.1,#2+0.1) -- (#1+0.1, #2-0.1) node[right]{#3};
+        }
+
+        \begin{center}
+        \begin{tikzpicture}
+        \draw[->, line width=1] (1, 1) -- (1, 5) node[left]{
+            \begin{tabular}{r} Sample \\ mean \end{tabular}
+        };
+        \draw[line width=1] (1, 4.5) -- (10, 4.5) node[right]{Action limit};
+        \draw[line width=1] (1, 4) -- (10, 4) node[right]{Warning limit};
+        \draw[line width=1] (1, 3) -- (10, 3) node[right]{Target value};
+        \draw[line width=1] (1, 2) -- (10, 2) node[right]{Warning limit};
+        \draw[line width=1] (1, 1.5) -- (10, 1.5) node[right]{Action limit};
+        \xpoint{1.6}{3.2}
+        \xpoint{2.4}{2.5}
+        \xpoint{3.2}{3.4}
+        \xpoint{3.7}{3.7}
+        \xpoint{4.1}{3.2}
+        \xpoint{4.6}{2.2}
+        \xpoint{5.3}{3.1}
+        \xpoint{6.1}{3.4}
+        \xpoint{6.7}{2.8}
+
+        \xpointn{7.4}{3.8}{(1)}
+        \xpointn{7.7}{1.2}{(2)}
+        \xpointn{8.7}{4.25}{(3)}
+        \end{tikzpicture}
+        \end{center}
 
         \begin{center}
         \begin{tabularx}{\textwidth}{l|X}
         Event & Action \\
         \hline
-        Sample mean is between warning limits & No action \\
-        Sample mean between warning and action limits & Take another sample immediently, if the new sample mean is outside warning limits take action \\
-        Sample mean outside action limits & Take action \\
+        (1) Sample mean is between warning limits & No action \\
+        (2) Sample mean outside action limits & Take action \\
+        (3) Sample mean between warning and action limits & Take another sample immediently, if the new sample mean is outside warning limits take action \\
         \end{tabularx}
         \end{center}
 
