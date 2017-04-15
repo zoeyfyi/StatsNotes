@@ -610,6 +610,7 @@ This test has 1 factor (model of car) at 3 levels (3 diffrent models).
         \paragraph{Statistical process control}
         Detect and signal when a production lines item-to-item varibility has increased or the process mean has moved form the target.
 
+    \newpage
     \subsubsection{Control of means}
         The most common method of statistical process control is to take regular samples and plot them on a control chart as shown in the following diagram:\\
         
@@ -699,6 +700,7 @@ This test has 1 factor (model of car) at 3 levels (3 diffrent models).
 
         \paragraph{Target values} Sometimes the target value is not defined/unattainable, it this case a large samples sample mean could be used. In the case were a warning that a process is doint better than expected (i.e. the strength of a iron casting is stronger than expected) an invistigation should be ran to see how the improvement can be maintained.
     
+    \newpage
     \subsubsection{Control of varibility}
         Within a sample their may be high varibility but a normal looking mean, to detect these events we can use a chart for range or a chart for standard deviation. To get the upper and lower limits for these charts multiply the short-term standard deviation by the appropiate value of D/E on table 12 (Control charts for varibility). Standard deviation charts have a better chance to detect a change in varibility with the same rate of false positives as a range chart, however the range is simpler to calculate.
 
@@ -732,7 +734,8 @@ This test has 1 factor (model of car) at 3 levels (3 diffrent models).
         \end{step}
 
         \end{example}
-
+    
+    \newpage
     \subsubsection{Estimating short-test standard deviation}
         Sometimes its not possible to collect a large sample to find the target value, instead we can estimate it from the range of several samples. Find the range of all the samples then find the mean range. Multiply this value by the suitable b value from table 12 to find an estimate for the standard deviation. Alternativly the b value can be applied to all the ranges and the mean of those values can be used.
 
@@ -758,6 +761,7 @@ This test has 1 factor (model of car) at 3 levels (3 diffrent models).
 
         \end{example}
 
+    \newpage
     \subsubsection{Tolerance limits}
         Many processes have limits which the product \textit{must} conform to. For example drugs imagine a drug with a tollerance of 4.9 to 5.1 (for potency) with a target value of 5.0. Its esimated standard deviation was 0.063 which gives the following upper and lower limits.
         \begin{align*}
@@ -806,6 +810,7 @@ This test has 1 factor (model of car) at 3 levels (3 diffrent models).
 
         \end{example}
 
+    \newpage
     \subsubsection{Control of proportion}
         Control charts may also be used when items are classified as conforming/non-conforming (instead of by weight or height etc). Consider a production line were samples were taken when the production was thought to be satisfactory. With a sample size of 100, the following are the number of non-conforming items in each sample:
         $$
@@ -853,3 +858,165 @@ This test has 1 factor (model of car) at 3 levels (3 diffrent models).
 
 \newpage
 \section{Acceptance Sampling}
+
+    \paragraph{Acceptance Sampling}
+    The process of deciding if a large batch of simular items is acceptable by testing a small amount of them.
+
+    \paragraph{Acceptance sampling by attributes} 
+    Each item is classified as conforming or non-conforming, if the sample contains to many non-conforming items the batch is rejected.
+
+    \paragraph{Operating characteristic}
+    A graph of probabilty of acceptance against proportion of non-conforming in the batch. Providing the sample size if small compared to the batch this will follow a binomial distribution.\\
+    \\
+    An example of an acceptance sampling plan is to reject a sample (of size 50) if their are more than 2 non-conforming items. This plan would be denoted as:
+    $$n = 50, r = 3$$
+    or
+    $$n = 50, a = 2$$
+    where $r$ is reject when $>=$ the value, and $a$ is accept when $<=$ the value, and $n$ is the sample size.\\
+    \\
+    For any sampling play their is always the risk or rejecting a good batch (Type I error) or accepting a bad batch (Type II error). An ideal sampling play has the large probabilty of accepting a good batch, and a small probabilty of accepting a bad batch.
+
+    \begin{example}
+    {
+        An acceptance sampling scheme consists of a sample of $m$ components being taken from a batch. The atch is rejected if $r$ or more non-conforming components are found in the sample, otherwise it is accepted. 
+    }
+
+    \begin{step}{If $n = 30$ and $r = 2$, find the probabilty of accepting a batch containing $1\%, 2\%, 4\%, 7\%, 10\%, 15\%, 20\%$ non-conforming components}
+    \begin{center}
+    \begin{tabular}{c|c|c}
+    Percentage & Distribution & Probabilty \\
+    \hline
+    1\%  & $X \sim B(30, 0.01)$ & 0.964 \\
+    2\%  & $X \sim B(30, 0.02)$ & 0.879 \\
+    4\%  & $X \sim B(30, 0.04)$ & 0.661 \\
+    7\%  & $X \sim B(30, 0.07)$ & 0.369 \\
+    10\% & $X \sim B(30, 0.10)$ & 0.184 \\
+    15\% & $X \sim B(30, 0.15)$ & 0.048 \\
+    20\% & $X \sim B(30, 0.20)$ & 0.010
+    \end{tabular}
+    \end{center}
+    \end{step}
+
+    \begin{step}{Draw the operating characteristic}
+    
+    \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={\% non-conforming},
+        ylabel={P(accept)},
+        xmin=0, xmax=20,
+        ymin=0, ymax=1,
+    ]
+    \addplot[smooth,color=red,mark=*]coordinates {
+    (0, 1)(1,0.964)(2,0.879)(4,0.661)(7,0.369)(10,0.184)(15,0.048)(20,0.010)
+    };
+    \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+    \end{step}
+    \end{example}
+
+    \subsection{Accepting a plan}
+    The operating characteristic summerizes the implications of a plan however it does not decide what plan should be used. If the sample size and acceptable level of risk is specified it is possible to derive a plan. For example say a manafacture wants their to be at least a 95\% chance of accepting a batch with 1\% non-conforming itesm where $n = 50$.
+
+    \begin{center}
+    \begin{tabular}{c|c}
+    $r$ & $P(X < r-1)$ \\
+    \hline
+    1 & $0.605$ \\
+    2 & $0.911$ \\
+    3 & $0.986$ \\
+    4 & $0.998$ \\
+    \end{tabular}
+    \end{center}
+
+    \noindent
+    So when $r = 1$ the chance of accepting a batch with 1\% of non-conforming items is 60.5\% which is less than the required 95\%. Plans were $r > 2$ all fit the requirement, however we also want to minimize the chance of accepting a bad batch so the manafacture should use $r = 3$.
+
+    \begin{example}
+    {
+        An manafacturer will accept a risk of not more than 10\% of a batch of items containing 2\% non-conforming begin rejected. A decision is to be made by examining a sample of 50 items.
+    }
+
+    \begin{step}{Find an appropiate decision procedure}
+    $$X \sim B(50, 0.02)$$
+
+    \begin{center}
+    \begin{tabular}{c|c}
+    $r$ & $1 - P(X < r-1)$ \\
+    \hline
+    1 & $0.636$ \\
+    2 & $0.264$ \\
+    3 & $0.078$ \\
+    \end{tabular}
+    \end{center}
+
+    $$r = 3$$
+    \end{step}
+
+    \end{example}
+
+    \subsection{Double sampling plans}
+    With a single sample it is very likely to detect a very good/bad batch however for a more intermediate batch it makes a large sample is required for more accuracy.
+    $$n = 30; a = 1, r = 3$$
+    $$n = 30; a = 4, r = 5$$
+    This is an example of a double sampling plan, If the first sample has exactly 2 non-conforming items a second sample is taken else it is accepted/rejected.
+
+    \subsection{Acceptance sampling by variable}
+    Acceptance sampling can be carried out by measuring a varible, say the strength of each item. If the mean of theses measurements $\bar{x}$ is above a threshold $k$ then the batch is accepted, else it is rejected. The operating characteristic for a test by varible would be the mean of the measurement against the probabilty of accepting the batch. Its a reasonable to assume the normal distribution since we are conserned with the mean of a large sample.
+
+    \begin{example}
+    {
+        A batch of bricks are tested for strength which follows a normal distribution with a standard deviation of 5.5. A batch is accepted if the mean of five bricks is greated than 51.
+    }
+
+    \begin{step}{Draw the operating characteristic}
+    The standard deviation of the sample mean will be $\dfrac{5.5}{\sqrt{5}} = 2.46$. Since most data is within 3 standard deviation (on both sides) we will use a range of 44-58.
+    
+    \begin{center}
+    \begin{tabular}{c|c|c}
+    $\mu$ & $\dfrac{51-\mu}{\dfrac{5.5}{\sqrt{5}}}$ & $P(\text{accept})$ \\
+    \hline
+    44 & 2.846 & 0.002 \\ 
+    46 & 2.033 & 0.021 \\
+    48 & 1.220 & 0.111 \\
+    50 & 0.407 & 0.342 \\
+    52 & -0.407 & 0.658 \\
+    54 & -1.220 & 0.889 \\
+    56 & -2.033 & 0.979 \\
+    58 & -2.846 & 0.998 \\
+    \end{tabular}
+    \end{center}
+    
+    \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={$\mu$},
+        ylabel={P(accept)},
+        xmin=44, xmax=58,
+        ymin=0, ymax=1,
+    ]
+    \addplot[smooth,color=red,mark=*]coordinates {
+    (44, 0.002)(46, 0.021)(48, 0.111)(50, 0.342)(52, 0.658)(54, 0.889)(56, 0.979)(58, 0.998)
+    };
+    \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+    \end{step}
+    
+    \begin{step}{The customer requires the probability of accepting a batch with a mean strength of 47 or less should be less than 10\%, would the customer be satisfied with the curren acceptance sampling}
+    47 is approximatly 0.05 or 5\% (from the operating characteristic) so the customer would be satisfied.
+    \end{step}
+
+    \begin{step}{Whats the smallest value for $k$ which would meet the customers requirements if $n = 6$}
+    \begin{align*}
+    \frac{k - 47}{\dfrac{5.5}{\sqrt{5}}} &> 1.2816 \\
+    k - 47 &> 2.8776 \\
+    k &> 49.8776
+    \end{align*}
+    $$k = 49.9$$
+    \end{step}
+
+    \end{example}
