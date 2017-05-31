@@ -1,6 +1,43 @@
 \cchapter{Maths Statistics 3}
 
 \section{Geometric and Exponential Distributions}
+    
+    \subsection{Geometric Distributions}
+        Geometric distribution is like a binomial distribution however, instead of counting the number of sucesses, it counts the number of trials until a success is obtained.
+        \\\\
+        Conditions for a Geometric Distribution:
+        \begin{itemize}
+        \item Only two possible outcomes (success or failure).
+        \item Trials are independent.
+        \item Probabilty of success is the same for each trial.
+        \end{itemize}
+        The probability density function for a Geometric Distribution is as follows:
+        \begin{align*}
+        P(x) &= p(1-p)^{x-1}
+        \end{align*}
+        Which makes sence since the probability of a success is the $x$ times the probability of failure times the single probability of success.
+        \\\\
+        The mean of a Geometric Distribution is dirivied as follows.
+        \begin{align*}
+        \text{Let }q &= 1-p                     \\
+        E(X) &= \sum{x_i p_i}                   \\
+             &= p + 2pq + 3pq^2 + 4pq^3 + ...   \\
+             &= p(1 + 2q + 3q^2 + 4q^3 + ...)   \\
+             &= p(1-q)^{-2}                     \\
+             &= \dfrac{p}{p^2}                  \\
+             &= \dfrac{1}{p}
+        \end{align*}
+        \\\\
+        And the varience can be found using $E(X^2) - E(X)^2 = Var(X)$
+        \begin{align*}
+        E(X^2) &= \dfrac{2-p}{p^2} \text{  (using the method above)}    \\
+        Var(X) &= \dfrac{2-p}{p^2} - \left(\dfrac{1}{p}\right)^2        \\
+               &= \dfrac{2-p-1}{p^2}                                    \\
+               &= \dfrac{1-p}{p^2}                                      \\
+        \end{align*}
+    \subsection{Exponential Distributions}
+        (See Exponential Distribution section)
+
 \section{Estimators}
 \section{Estimation}
 \section{Hypothesis Testing}
