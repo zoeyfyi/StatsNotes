@@ -222,6 +222,31 @@
     \end{step}
 
     \end{example}
+    
+    Using these methods, we can now prove $E(S^2) = \sigma^2$
+    \begin{align*}
+        \bar{X}  &= \sum{\dfrac{X_i}{n}} \\
+        n\bar{X} &= \sum{X_i}\\\\
+        \dfrac{\sigma^2}{n} &= E(\bar{X}^2) - \mu^2 \\
+        E(\bar{X}^2) &= \dfrac{\sigma^2}{n} + \mu^2
+    \\\\
+    E(S^2) &= E\left(\dfrac{1}{n-1} \times \sum{(X_i - \bar{X})^2}\right)               \\
+           &= \dfrac{1}{n-1} \times E\left(\sum{(X_i - \bar{X})^2}\right)               \\
+           &= \dfrac{1}{n-1} \times \sum{E((X_i - \bar{X})^2)}                          \\
+           &= \dfrac{1}{n-1} \times \sum{E(X_i^2 - 2\bar{X}X_i + \bar{X}^2)}            \\
+           &= \dfrac{1}{n-1} \times \sum{(E(X_i^2) - E(2\bar{X}X_i) + E(\bar{X}^2))}    \\
+           &= \dfrac{1}{n-1} \times \left(\sum{E(X_i^2)} - \sum{E(2\bar{X}X_i)} + \sum{E(\bar{X}^2))}\right) \\
+           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(\sum{2\bar{X}X_i}\right) + E\left(\sum{\bar{X}^2}\right)\right)\\
+           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(2\bar{X} \times n\bar{X}\right) + E\left(n\bar{X}^2\right)\right)\\
+           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(2n\bar{X}^2\right) + E\left(n\bar{X}^2\right)\right)\\
+           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(n\bar{X}^2\right)\right)\\
+           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - nE\left(\bar{X}^2\right)\right)\\
+           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - n\left(\dfrac{\sigma^2}{n} + \mu^2\right)\right)\\
+           &= \dfrac{1}{n-1} \times (n\sigma^2 - n\mu^2 - \sigma^2 + n\mu^2)\\
+           &= \dfrac{1}{n-1} \times (n\sigma^2 - \sigma^2)\\
+           &= \dfrac{1}{n-1} \times \sigma^2(n-1)\\
+           &= \sigma^2
+    \end{align*}
 
 \section{Estimation}
 \section{Hypothesis Testing}
