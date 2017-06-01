@@ -72,182 +72,346 @@
         (See Exponential Distribution section)
 
 \section{Estimators}
-    \paragraph{Sample Statistic} A function of observed data, used to estimate parameters (such as mean and varience).
+    \subsection{Estimators, Unbiased, consistent and efficiency}
+        \paragraph{Sample Statistic} A function of observed data, used to estimate parameters (such as mean and varience).
 
-    \paragraph{Sampling Distribution} The probability distribution for a statistic based on random samples.
+        \paragraph{Sampling Distribution} The probability distribution for a statistic based on random samples.
 
-    \paragraph{Population Parameter} A statistical measure for a population, used within a general distribution function such a the normal distribution.
+        \paragraph{Population Parameter} A statistical measure for a population, used within a general distribution function such a the normal distribution.
 
-    \paragraph{Estimators} A function to estimate a population parameter from some samples.
+        \paragraph{Estimators} A function to estimate a population parameter from some samples.
 
-    \paragraph{Estimates} The value yielded by an estimator.
+        \paragraph{Estimates} The value yielded by an estimator.
 
-    \paragraph{Unbiased estimator} If $T$ is the estimator for a parameter $\theta$ and $E(T) = \theta$ then $T$ is an unbiased estimator for $\theta$.
+        \paragraph{Unbiased estimator} If $T$ is the estimator for a parameter $\theta$ and $E(T) = \theta$ then $T$ is an unbiased estimator for $\theta$.
 
-    \paragraph{Consistency} Estimators are consistent if their variation approaches zero as the sample size approaches infinity.
+        \paragraph{Consistency} Estimators are consistent if their variation approaches zero as the sample size approaches infinity.
 
-    \paragraph{Efficiency} A measure of quaility of an estimator, a more effiecent estimator needs fewer observations than a less efficent one.
+        \paragraph{Efficiency} A measure of quaility of an estimator, a more effiecent estimator needs fewer observations than a less efficent one.
 
-    \paragraph{Relative Efficiency} The ratio of two procedures effciencies, given by $RE(T_1 : T_2) = \dfrac{Var(T_2)}{Var(T_1)}$
+        \paragraph{Relative Efficiency} The ratio of two procedures effciencies, given by $RE(T_1 : T_2) = \dfrac{Var(T_2)}{Var(T_1)}$
 
-    \begin{example}
-    {
-        The conductivity, $\gamma$, of metal wire is estimated by observing a related random variable, R, which has probability density function
+        \begin{example}
+        {
+            The conductivity, $\gamma$, of metal wire is estimated by observing a related random variable, R, which has probability density function
 
-        $$
-        f(r) = 
-        \begin{cases}
-        \dfrac{2r}{\gamma^2} & 0 \leq r \leq \gamma \\
-        0 & \text{otherwise}
-        \end{cases}
-        $$
-    }
+            $$
+            f(r) = 
+            \begin{cases}
+            \dfrac{2r}{\gamma^2} & 0 \leq r \leq \gamma \\
+            0 & \text{otherwise}
+            \end{cases}
+            $$
+        }
 
-        \begin{step}{Show that $\frac{3}{2}R$ is an unbiased estimator of $\gamma$}
-            \begin{align*}
-            E\left(\dfrac{3}{2}R\right) &= \dfrac{3}{2} \times E(R)                                             \\
-                                        &= \dfrac{3}{2} \times \int_0^\gamma r \times \dfrac{2r}{\gamma^2} dr   \\
-                                        &= \int_0^\gamma \dfrac{3r^2}{\gamma^2} dr                              \\
-                                        &= \left[\dfrac{r^3}{\gamma^2}\right]^\gamma_0                          \\
-                                        &= \dfrac{\gamma^3}{\gamma^2} - \dfrac{0}{\gamma^2}                     \\
-                                        &= \gamma 
-            \end{align*}
+            \begin{step}{Show that $\frac{3}{2}R$ is an unbiased estimator of $\gamma$}
+                \begin{align*}
+                E\left(\dfrac{3}{2}R\right) &= \dfrac{3}{2} \times E(R)                                             \\
+                                            &= \dfrac{3}{2} \times \int_0^\gamma r \times \dfrac{2r}{\gamma^2} dr   \\
+                                            &= \int_0^\gamma \dfrac{3r^2}{\gamma^2} dr                              \\
+                                            &= \left[\dfrac{r^3}{\gamma^2}\right]^\gamma_0                          \\
+                                            &= \dfrac{\gamma^3}{\gamma^2} - \dfrac{0}{\gamma^2}                     \\
+                                            &= \gamma 
+                \end{align*}
+            \end{step}
+
+            \begin{step}{Given that the variance of $R$ is $\frac{1}{18}\gamma^2$, find, in terms of $\gamma$, the variance of $\frac{3}{2}R$}
+                \begin{align*}
+                Var\left(\frac{3}{2}R\right) &= \left(\dfrac{3}{2}\right)^2 \times Var(R)   \\
+                                            &= \dfrac{9}{4} \times \dfrac{\gamma^2}{18}      \\
+                                            &= \dfrac{\gamma^2}{8}
+                \end{align*}
+            \end{step}
+
+            \begin{step}{The conductivity can also be estimated by making observations of a random varible, S, which has mean $\frac{1}{4}\gamma$ and $\frac{1}{16}\gamma^2$. The ranomd varible $T$ is defined by $T = S_1 + S_2 + S_3$, where $S_1$, $S_2$ and $S_3$ are three independent observations of $S$.\\\\Find the value of the constant $k$ such that $kT$ is an unbiased estimator of $\gamma$}
+                \begin{align*}
+                    \gamma &= E(kT)                                                                 \\
+                    \gamma &= k \times E(T)                                                         \\
+                    \gamma &= k \times E(S_1 + S_2 + S_3)                                           \\
+                    \gamma &= k \times \frac{1}{4}\gamma + \frac{1}{4}\gamma + \frac{1}{4}\gamma    \\
+                    \gamma &= k \times \frac{3}{4}\gamma                                            \\
+                    k &= \frac{4}{3}
+                \end{align*}
+            \end{step}
+
+            \begin{step}{Find the relative efficiency of $\frac{3}{2}R$ with respect to $kT$}
+                \begin{align*}
+                Var\left(\frac{4}{3}T\right) &= \left(\dfrac{4}{3}\right)^2 \times Var(T)       \\
+                                            &= \dfrac{16}{9} \times Var(S_1 + S_2 + S_3)       \\
+                                            &= \dfrac{16}{9} \times (\dfrac{1}{16}\gamma^2 + \dfrac{1}{16}\gamma^2 + \dfrac{1}{16}\gamma^2)                             \\
+                                            &= \dfrac{16}{9} \times \dfrac{3}{16}\gamma^2      \\
+                                            &= \dfrac{\gamma^2}{3}
+                \end{align*}
+                \begin{align*}
+                    RE\left(\frac{3}{2}R : \frac{4}{3}T\right) &= \dfrac{Var\left(\dfrac{4}{3}T\right)}{ Var\left(\dfrac{3}{2}R\right)} \\
+                    &= \dfrac{\dfrac{\gamma^2}{3}}{\dfrac{\gamma^2}{8}}      \\
+                    &= \dfrac{\gamma^2}{3} \times \dfrac{8}{\gamma^2}        \\
+                    &= \dfrac{8}{3}
+                \end{align*}
+            \end{step}
+
+            \begin{step}{State, with justification, which of $\frac{3}{2}R$ and $kT$ is a preferred estimator of $\gamma$}
+                $\dfrac{8}{3} > 1$ so $\dfrac{3}{2}R$ is the preffered estimator.
+            \end{step}
+
+        \end{example}
+
+        \begin{example}
+        {
+            The random variable $X$ denotes the number of successes in a random sample of size $n$ from a large population in which the proportion of successes is $p$.
+            \\\\
+            The random varible $Y$ denotes the number of successes in an independent random sample of size $3n$ from the same large population.
+        }
+
+        \begin{step}{Write down expressions for the mean and the variance of each of $X$ and $Y$}
+            X: Mean = $np$, Variance = $np(1-p)$
+
+            Y: Mean = $3np$, Variance = $3np(1-p)$
         \end{step}
 
-        \begin{step}{Given that the variance of $R$ is $\frac{1}{18}\gamma^2$, find, in terms of $\gamma$, the variance of $\frac{3}{2}R$}
-            \begin{align*}
-            Var\left(\frac{3}{2}R\right) &= \left(\dfrac{3}{2}\right)^2 \times Var(R)   \\
-                                        &= \dfrac{9}{4} \times \dfrac{\gamma^2}{18}      \\
-                                        &= \dfrac{\gamma^2}{8}
-            \end{align*}
-        \end{step}
+        \begin{step}
+        {
+            Two estimators suggested for $p$ are:
+            \begin{center}
+            $\hat{P}_1 = \dfrac{X + Y}{4n}$ and $\hat{P}_2 = \dfrac{1}{2}\left(\dfrac{X}{n} + \dfrac{Y}{3n}\right)$
+            \end{center}
+            Show that both $\hat{P}_1$ and $\hat{P}_2$ are unbiased and consistent estimators for $p$, and that $\hat{P}_1$ is the more efficent.
+        }
 
-        \begin{step}{The conductivity can also be estimated by making observations of a random varible, S, which has mean $\frac{1}{4}\gamma$ and $\frac{1}{16}\gamma^2$. The ranomd varible $T$ is defined by $T = S_1 + S_2 + S_3$, where $S_1$, $S_2$ and $S_3$ are three independent observations of $S$.\\\\Find the value of the constant $k$ such that $kT$ is an unbiased estimator of $\gamma$}
-            \begin{align*}
-                \gamma &= E(kT)                                                                 \\
-                \gamma &= k \times E(T)                                                         \\
-                \gamma &= k \times E(S_1 + S_2 + S_3)                                           \\
-                \gamma &= k \times \frac{1}{4}\gamma + \frac{1}{4}\gamma + \frac{1}{4}\gamma    \\
-                \gamma &= k \times \frac{3}{4}\gamma                                            \\
-                k &= \frac{4}{3}
-            \end{align*}
-        \end{step}
+        \begin{align*}
+            E\left(\dfrac{X + Y}{4n}\right) &= \dfrac{np + 3np}{4n}     \\
+            &= \dfrac{4np}{4n}                                          \\
+            &= p
+        \end{align*}
+        
+        \begin{align*}
+            E\left(\dfrac{1}{2}\left(\dfrac{X}{n} + \dfrac{Y}{3n}\right)\right) &= \frac{1}{2} \times \left(\dfrac{np}{n}+\dfrac{3np}{3n}\right)    \\
+            &= \frac{1}{2} \times (p + p) \\
+            &= p
+        \end{align*}
 
-        \begin{step}{Find the relative efficiency of $\frac{3}{2}R$ with respect to $kT$}
-            \begin{align*}
-            Var\left(\frac{4}{3}T\right) &= \left(\dfrac{4}{3}\right)^2 \times Var(T)       \\
-                                         &= \dfrac{16}{9} \times Var(S_1 + S_2 + S_3)       \\
-                                         &= \dfrac{16}{9} \times (\dfrac{1}{16}\gamma^2 + \dfrac{1}{16}\gamma^2 + \dfrac{1}{16}\gamma^2)                             \\
-                                         &= \dfrac{16}{9} \times \dfrac{3}{16}\gamma^2      \\
-                                         &= \dfrac{\gamma^2}{3}
-            \end{align*}
-            \begin{align*}
-                RE\left(\frac{3}{2}R : \frac{4}{3}T\right) &= \dfrac{Var\left(\dfrac{4}{3}T\right)}{ Var\left(\dfrac{3}{2}R\right)} \\
-                &= \dfrac{\dfrac{\gamma^2}{3}}{\dfrac{\gamma^2}{8}}      \\
-                &= \dfrac{\gamma^2}{3} \times \dfrac{8}{\gamma^2}        \\
-                &= \dfrac{8}{3}
-            \end{align*}
-        \end{step}
+        \begin{align*}
+            Var\left(\dfrac{X + Y}{4n}\right) &= \dfrac{npq + 3npq}{16n^2}      \\
+            &= \dfrac{4pq}{16n}                                                 \\
+            &= \dfrac{pq}{4n}                                                   \\
+            &= \dfrac{p(1-p)}{4n}
+        \end{align*}
 
-        \begin{step}{State, with justification, which of $\frac{3}{2}R$ and $kT$ is a preferred estimator of $\gamma$}
-            $\dfrac{8}{3} > 1$ so $\dfrac{3}{2}R$ is the preffered estimator.
-        \end{step}
-
-    \end{example}
-
-    \begin{example}
-    {
-        The random variable $X$ denotes the number of successes in a random sample of size $n$ from a large population in which the proportion of successes is $p$.
-        \\\\
-        The random varible $Y$ denotes the number of successes in an independent random sample of size $3n$ from the same large population.
-    }
-
-    \begin{step}{Write down expressions for the mean and the variance of each of $X$ and $Y$}
-        X: Mean = $np$, Variance = $np(1-p)$
-
-        Y: Mean = $3np$, Variance = $3np(1-p)$
-    \end{step}
-
-    \begin{step}
-    {
-        Two estimators suggested for $p$ are:
         \begin{center}
-        $\hat{P}_1 = \dfrac{X + Y}{4n}$ and $\hat{P}_2 = \dfrac{1}{2}\left(\dfrac{X}{n} + \dfrac{Y}{3n}\right)$
+        as $Var\left(\dfrac{X + Y}{4n}\right) \rightarrow 0, n \rightarrow \infty$
         \end{center}
-        Show that both $\hat{P}_1$ and $\hat{P}_2$ are unbiased and consistent estimators for $p$, and that $\hat{P}_1$ is the more efficent.
-    }
 
-    \begin{align*}
-        E\left(\dfrac{X + Y}{4n}\right) &= \dfrac{np + 3np}{4n}     \\
-        &= \dfrac{4np}{4n}                                          \\
-        &= p
-    \end{align*}
+        \begin{align*}
+            Var\left(\dfrac{1}{2}\left(\dfrac{X}{n} + \dfrac{Y}{3n}\right)\right) &= \frac{1}{2^2} \times \left(\dfrac{npq}{n^2}+\dfrac{3npq}{9n^2}\right)        \\
+            &= \frac{1}{4} \times \dfrac{12npq}{9n^2}   \\
+            &= \dfrac{pq}{3n}                           \\
+            &= \dfrac{p(1-p)}{3n}
+        \end{align*}
+
+        \begin{center}
+        as $Var\left(\dfrac{1}{2}\left(\dfrac{X}{n} + \dfrac{Y}{3n}\right)\right) \rightarrow 0, n \rightarrow \infty$
+        \end{center}
+
+        \begin{align*}
+        RE(\hat{P}_1 : \hat{P}_2) &= \dfrac{Var(\hat{P}_2)}{Var(\hat{P}_1)}  \\
+        &= \dfrac{\dfrac{p(1-p)}{3n}}{\dfrac{p(1-p)}{4n}}                               \\
+        &= \frac{4}{3}                                                                  \\
+        \end{align*}
+
+        $\dfrac{4}{3} > 1$ so $\hat{P}_1$ is the more efficent.
+
+        \end{step}
+
+        \end{example}
     
-    \begin{align*}
-        E\left(\dfrac{1}{2}\left(\dfrac{X}{n} + \dfrac{Y}{3n}\right)\right) &= \frac{1}{2} \times \left(\dfrac{np}{n}+\dfrac{3np}{3n}\right)    \\
-        &= \frac{1}{2} \times (p + p) \\
-        &= p
-    \end{align*}
-
-    \begin{align*}
-        Var\left(\dfrac{X + Y}{4n}\right) &= \dfrac{npq + 3npq}{16n^2}      \\
-        &= \dfrac{4pq}{16n}                                                 \\
-        &= \dfrac{pq}{4n}                                                   \\
-        &= \dfrac{p(1-p)}{4n}
-    \end{align*}
-
-    \begin{center}
-    as $Var\left(\dfrac{X + Y}{4n}\right) \rightarrow 0, n \rightarrow \infty$
-    \end{center}
-
-    \begin{align*}
-        Var\left(\dfrac{1}{2}\left(\dfrac{X}{n} + \dfrac{Y}{3n}\right)\right) &= \frac{1}{2^2} \times \left(\dfrac{npq}{n^2}+\dfrac{3npq}{9n^2}\right)        \\
-        &= \frac{1}{4} \times \dfrac{12npq}{9n^2}   \\
-        &= \dfrac{pq}{3n}                           \\
-        &= \dfrac{p(1-p)}{3n}
-    \end{align*}
-
-    \begin{center}
-    as $Var\left(\dfrac{1}{2}\left(\dfrac{X}{n} + \dfrac{Y}{3n}\right)\right) \rightarrow 0, n \rightarrow \infty$
-    \end{center}
-
-    \begin{align*}
-    RE(\hat{P}_1 : \hat{P}_2) &= \dfrac{Var(\hat{P}_2)}{Var(\hat{P}_1)}  \\
-    &= \dfrac{\dfrac{p(1-p)}{3n}}{\dfrac{p(1-p)}{4n}}                               \\
-    &= \frac{4}{3}                                                                  \\
-    \end{align*}
-
-    $\dfrac{4}{3} > 1$ so $\hat{P}_1$ is the more efficent.
-
-    \end{step}
-
-    \end{example}
-    
-    Using these methods, we can now prove $E(S^2) = \sigma^2$
-    \begin{align*}
-        \bar{X}  &= \sum{\dfrac{X_i}{n}} \\
-        n\bar{X} &= \sum{X_i}\\\\
-        \dfrac{\sigma^2}{n} &= E(\bar{X}^2) - \mu^2 \\
-        E(\bar{X}^2) &= \dfrac{\sigma^2}{n} + \mu^2
-    \\\\
-    E(S^2) &= E\left(\dfrac{1}{n-1} \times \sum{(X_i - \bar{X})^2}\right)               \\
-           &= \dfrac{1}{n-1} \times E\left(\sum{(X_i - \bar{X})^2}\right)               \\
-           &= \dfrac{1}{n-1} \times \sum{E((X_i - \bar{X})^2)}                          \\
-           &= \dfrac{1}{n-1} \times \sum{E(X_i^2 - 2\bar{X}X_i + \bar{X}^2)}            \\
-           &= \dfrac{1}{n-1} \times \sum{(E(X_i^2) - E(2\bar{X}X_i) + E(\bar{X}^2))}    \\
-           &= \dfrac{1}{n-1} \times \left(\sum{E(X_i^2)} - \sum{E(2\bar{X}X_i)} + \sum{E(\bar{X}^2))}\right) \\
-           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(\sum{2\bar{X}X_i}\right) + E\left(\sum{\bar{X}^2}\right)\right)\\
-           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(2\bar{X} \times n\bar{X}\right) + E\left(n\bar{X}^2\right)\right)\\
-           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(2n\bar{X}^2\right) + E\left(n\bar{X}^2\right)\right)\\
-           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(n\bar{X}^2\right)\right)\\
-           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - nE\left(\bar{X}^2\right)\right)\\
-           &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - n\left(\dfrac{\sigma^2}{n} + \mu^2\right)\right)\\
-           &= \dfrac{1}{n-1} \times (n\sigma^2 - n\mu^2 - \sigma^2 + n\mu^2)\\
-           &= \dfrac{1}{n-1} \times (n\sigma^2 - \sigma^2)\\
-           &= \dfrac{1}{n-1} \times \sigma^2(n-1)\\
-           &= \sigma^2
-    \end{align*}
+    \subsection{Proof of $E(S^2) = \sigma^2$}
+        Using these methods, we can now prove $E(S^2) = \sigma^2$
+        \begin{align*}
+            \bar{X}  &= \sum{\dfrac{X_i}{n}} \\
+            n\bar{X} &= \sum{X_i}\\\\
+            \dfrac{\sigma^2}{n} &= E(\bar{X}^2) - \mu^2 \\
+            E(\bar{X}^2) &= \dfrac{\sigma^2}{n} + \mu^2
+        \\\\
+        E(S^2) &= E\left(\dfrac{1}{n-1} \times \sum{(X_i - \bar{X})^2}\right)               \\
+            &= \dfrac{1}{n-1} \times E\left(\sum{(X_i - \bar{X})^2}\right)               \\
+            &= \dfrac{1}{n-1} \times \sum{E((X_i - \bar{X})^2)}                          \\
+            &= \dfrac{1}{n-1} \times \sum{E(X_i^2 - 2\bar{X}X_i + \bar{X}^2)}            \\
+            &= \dfrac{1}{n-1} \times \sum{(E(X_i^2) - E(2\bar{X}X_i) + E(\bar{X}^2))}    \\
+            &= \dfrac{1}{n-1} \times \left(\sum{E(X_i^2)} - \sum{E(2\bar{X}X_i)} + \sum{E(\bar{X}^2))}\right) \\
+            &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(\sum{2\bar{X}X_i}\right) + E\left(\sum{\bar{X}^2}\right)\right)\\
+            &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(2\bar{X} \times n\bar{X}\right) + E\left(n\bar{X}^2\right)\right)\\
+            &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(2n\bar{X}^2\right) + E\left(n\bar{X}^2\right)\right)\\
+            &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - E\left(n\bar{X}^2\right)\right)\\
+            &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - nE\left(\bar{X}^2\right)\right)\\
+            &= \dfrac{1}{n-1} \times \left(n(\sigma^2 - \mu^2) - n\left(\dfrac{\sigma^2}{n} + \mu^2\right)\right)\\
+            &= \dfrac{1}{n-1} \times (n\sigma^2 - n\mu^2 - \sigma^2 + n\mu^2)\\
+            &= \dfrac{1}{n-1} \times (n\sigma^2 - \sigma^2)\\
+            &= \dfrac{1}{n-1} \times \sigma^2(n-1)\\
+            &= \sigma^2
+        \end{align*}
 
 \section{Estimation}
+    \subsection{Confidence interval for diffrence in means of two normal distributions}
+        The confidence interval for the diffrence of two means is as simple as finding the diffrence between the two sets of samples and finding the confidence interval as normal.
+
+        \begin{example}
+        {
+            The following is the blood pressure of patients while sitting and standing.
+
+            \begin{center}
+            \begin{tabular}{l|c|c|c|c|c|c|c|c|c|c|c|c}
+                Patient     & A & B & C & D & E & F & G & H & I & J & K & L \\
+                \hline
+                Sitting     & 72 & 79 & 69 & 76 & 82 & 66 & 87 & 78 & 85 & 77 & 84 & 70 \\
+                Standing    & 81 & 70 & 79 & 84 & 88 & 77 & 79 & 85 & 91 & 74 & 88 & 80 
+            \end{tabular}
+            \end{center}
+
+            Construct a 95\% confidence inteval for the mean diffrence between the patient's blood pressure assuming the diffrence in blood pressure are normally distributed, and state weather the claim that patients blood pressure are diffrent is supported.
+        }
+
+        \begin{step}{Find the diffrence}
+            $$
+                d_i = 9, -9, 10, 8, 6, 11, -8, 7, 6, -3, 4, 10
+            $$
+        \end{step}
+
+        \begin{step}{Find the mean and variance of the diffrences}
+            $$
+                \bar{d} = 4.5
+            $$
+            $$
+                s_d = 7.01
+            $$
+        \end{step}
+
+        \begin{step}{Find the critical value}
+            $$
+                cv = t_{11} = 2.201
+            $$
+        \end{step}
+
+        \begin{step}{Construct the confindence inteval}
+            \begin{align*}
+                4.25 \pm 2.201 \times \dfrac{7.01}{\sqrt{12}} &= (-0.20, 8.70)
+            \end{align*}
+        \end{step}
+
+        \begin{step}{Conclude}
+            The confindence interval includes 0, so their is no evidence to support the claim that patients blood pressure is diffrent between sitting and standing.
+        \end{step}
+
+        \end{example}
+
+    \subsection{Confindence interval for variance}
+        (See SS05 Confindence interval for variance)
+
+    \subsection{Confindence interval for the ratio of two variances}
+         The ratio of variances is used it ANOVA and variance test's, but we can also find its confindence interval.
+
+         Given $s_x$, $n_x$, $s_y$ and $n_y$ of two normal distributions, the confidence interval for the ratio of the variances is as follows:
+         $$
+         \dfrac{1}{F_{v_1, v_2}} \leq \frac{VR}{F_{\text{calc}}} \leq F_{v_2, v_1}
+         $$
+         Where $F_{\text{calc}} = \dfrac{s_x^2}{s_y^2}$, $v_1 = n_x - 1$ and $v_2 = n_y - 1$
+
+         \begin{example}
+         {
+             The broadband speed of 12 rural villages are as follows:
+             $$1.9, 2.6, 1.8, 3.4, 2.2, 3.0, 2.7, 3.7, 2.7, 1.9, 3.4, 3.1$$
+             The broadband speed of 9 small towns are as follows:
+             $$7.8, 7.7, 7.5, 7.7, 8.0, 7.3, 7.7, 7.4, 7.8$$
+
+             Determine a 99\% confindence interval for the variance ratio $\dfrac{\sigma_X^2}{\sigma_Y^2}$, and comment on the suggestion that rutal villages is more variable than small towns.
+         }
+         
+         \begin{step}{Find the variance of $X$ and $Y$}
+            $$s_X^2 = 0.41636$$
+            $$s_Y^2 = 0.04778$$
+         \end{step}
+
+         \begin{step}{Find the critical values}
+            \begin{align*}
+            v_1       &= 12 - 1   \\
+                      &= 11       \\
+            v_2       &= 9 - 1    \\
+                      &= 8        \\
+            F_{11, 8} &= 7.104    \\
+            F_{8, 11} &= 5.682
+            \end{align*}
+            $$\dfrac{1}{7.104} \leq \dfrac{VR}{8.7146} \leq 7.682$$
+            $$1.23 \leq VR \leq 49.5$$
+         \end{step}
+
+         \begin{step}{Conclude}
+            1 is not inside the confidence interval, so broadband speeds are more varible in villages.
+         \end{step}
+
+         \end{example}
+
 \section{Hypothesis Testing}
+    \subsection{Test for diffrence between in mean}
+        (See SS5 Test for diffrence between in mean)
+
+    \subsection{Tests for a variance}
+        (See SS5 Test for variance equality)
+
+    \subsection{Test for the ratio of two variances}
+        Much like how we can test for variace equality, we can test the ratio of two variances in a simular mannor.
+
+        \subsubsection{Process}
+            \begin{enumerate}
+            \item Hypothesis.
+            \item Find the sample variances
+            \item Calculate the $F_{\text{test}}$ divided by the ratio that we assume in $H_0$
+            \item Determine the critical value
+            \item Conclude
+            \end{enumerate}
+
+        \begin{example}
+        {
+            With the following data:
+            \begin{center}
+            \begin{tabular}{c|c|c}
+            Distribution & $s^2$ & $n$ \\
+            $S$ & 3372.75 & 12 \\
+            $N$ & 290.5 & 8 \\
+            \end{tabular}
+            \end{center}
+            Test the claim that the standard deviation of $S$ is twice that of $N$.
+        }
+        
+        \begin{step}{Hypothesis}
+            $$ H_0: \sigma_S = 2 \sigma_N $$
+            $$ H_0: \sigma_S \ne 2 \sigma_N $$
+        \end{step}
+
+        \begin{step}{Sample variances}
+            $$s_S^2 = 3372.75$$
+            $$s_N^2 = 290.5$$
+        \end{step}
+
+        \begin{step}{Calculate $F_\text{test}$}
+            \begin{align*}
+                F_\text{test} &= \dfrac{3372.75}{2^2 \times 290.5}  \\
+                              &= 2.90
+            \end{align*}
+        \end{step}
+
+        \begin{step}{Critical value}
+            \begin{align*}
+            v_1 &= 12 - 1       \\
+                &= 11           \\
+            v_2 &= 8 - 1        \\
+                &= 7            \\\\
+            F_{11, 7} &= 3.60
+            \end{align*}
+        \end{step}
+
+        \begin{step}{Conclude}
+            $2.80 < 3.60$, so accept $H_0$ significant evidence that the standard deviation of $S$ is twice that of $N$.
+        \end{step}
+
+        \end{example}
+
 \section{Chi-Squared ($\chi^2$) Goodness of Fit Testing}
