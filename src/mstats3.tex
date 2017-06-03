@@ -1,1 +1,299 @@
 \cchapter{Maths Statistics 3}
+
+    \section{Further Probability}
+        \subsection{Bayes' Theorem}
+            Bayes' theorem states:
+            $$
+            P(A_j|B) = \dfrac{P(A_j)P(B|A_j)}{\displaystyle\sum^n_{i=1}{P(A_i)P(B|A_i)}}
+            $$
+
+            \begin{example}
+            {
+                Three members of a golf club are running for captain.
+
+                \begin{center}
+                    \begin{tabular}{c|l|c|c}
+                        Event & Person  & Probability of election & Probability of increasing fees \\
+                        \hline
+                        $A_1$ & Alan    & 0.3 & 0.8 \\
+                        $A_2$ & Brian   & 0.5 & 0.1 \\
+                        $A_3$ & Clive   & 0.2 & 0.4 \\
+                    \end{tabular} 
+                \end{center}
+
+                After the election, fees were increased. Find the probability Clive was elected. 
+            }
+
+            \begin{step}{Use Bayes' Theorem}
+                Let $B$ be the probability that their is a fee increase.
+                \begin{align*}
+                    P(A_3|B) &= \dfrac{P(A_3)P(B|A_3)}{P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)P(B|A_3)}    \\
+                             &= \dfrac{0.2\times0.4}{0.3\times0.8+0.5\times0.1+0.2\times0.4}            \\
+                             &= \frac{8}{37}
+                \end{align*}
+            \end{step}
+
+            \end{example}
+
+    \section{Linear Combinations of Random Variables}
+        \subsection{Mean and variance of linear combination of random variables}
+        Covariance tells you how two random varibles vary togther. Its function is defined as the following:
+        $$
+        Cov(X, Y) = E((X-\mu_x)(Y-\mu_Y)) = E(XY) - \mu_x \mu_y
+        $$
+        Using the covariance we can find the product moment correlation coefficent of two random varibles with the following:
+        $$
+        \rho = \dfrac{Cov(X, Y)}{\sigma_X \sigma_Y}
+        $$
+        Additionaly the variance can be computed with the following:
+        $$
+        Var(aX \pm bY) = a^2 Var(X) + b^2 Var(Y) \pm 2ab Cov(X, Y)
+        $$
+
+        \begin{example}
+        {
+            \begin{center}
+                \begin{tabular}{c|c|c|c|c|c|c}
+                    X/Y & 2 & 3 & 4 & 5 & 6 & $P(Y = y)$\\
+                    \hline
+                    3 & 0.00 & 0.05 & 0.20 & 0.20 & 0.05 & 0.50 \\
+                    4 & 0.00 & 0.15 & 0.10 & 0.05 & 0.00 & 0.30 \\
+                    5 & 0.05 & 0.05 & 0.10 & 0.00 & 0.00 & 0.20 \\
+                    \hline
+                    $P(X = x)$ & 0.05 & 0.25 & 0.40 & 0.25 & 0.05 & 1.00 \\
+                \end{tabular}
+            \end{center}
+        }
+
+            \begin{step}{State why $E(X)=4$ and show that $Var(X)=0.9$}
+                The distribution $X$ is symetrical around 4, thus $E(X) = 4$
+                \begin{align*}
+                    E(X^2) &= 2^2 \times 0.05 + 3^2 \times 0.25 + 4^2 \times 0.40 + 5^2 \times 0.25 + 6^2 \times 0.05\\
+                    &= 16.9 \\
+                    Var(X) &= 16.9 - 4^2 \\
+                    &= 0.9
+                \end{align*}
+            \end{step}
+
+            \begin{step}{Given that $$E(Y)=3.7,Var(Y)=0.61,E(XY)=14.4$$Calculate values for $Cov(X,Y)$ and $\rho_{XY}$}
+                \begin{align*}
+                Cov(X,Y)  &= 14.4 - 4 \times 3.7                            \\
+                        &= -0.4                                           \\
+                \rho_{XY} &= \dfrac{-0.4}{\sqrt{0.9} \times \sqrt{0.61}}    \\
+                        &= -0.540
+                \end{align*}
+            \end{step}
+
+            \begin{step}{Find the mean and variance of $T = X + Y$}
+                \begin{align*}
+                    E(T)    &= E(X) + E(Y)                  \\
+                            &= 4 + 3.7                      \\
+                            &= 7.7                          \\
+                    Var(T)  &= 0.9 + 0.61 + 2 \times -0.4   \\
+                            &= 0.71
+                \end{align*}
+            \end{step}
+
+            \begin{step}{Find the mean and variance of $D = X - Y$}
+                \begin{align*}
+                    E(D)    &= E(X) - E(Y)                  \\
+                            &= 4 - 3.7                      \\
+                            &= 0.3                          \\
+                    Var(D)  &= 0.9 + 0.61 - 2 \times -0.4   \\
+                            &= 2.31
+                \end{align*}
+            \end{step}
+
+        \end{example}
+
+        \subsection{Mean and variance of linear combination of independent random variables}
+            (See SS04 Combination of random varibles)
+
+        \subsection{Linear combination of independent normal variables}
+            (See SS04 Combination of random varibles)
+
+    \section{Distributional Approximations}
+        \subsection{Mean and variance of binomial and poisson distributions}
+            \subsubsection{Proof of $\mu = np$ for the Binomial distribution}
+                \begin{align*}
+                    \mu &= E(X)                                                                     \\
+                        &= \sum x_i p_i                                                     \\
+                        &= \sum^n_{x=0} x \times \dfrac{n!}{x!(n-x)!} \times p^x(1-p)^{n-x}       \\
+                        &= \sum^n_{x=1} x \times \dfrac{n!}{x!(n-x)!} \times p^x(1-p)^{n-x} && \text{Summation is zero at $x=0$, so lower bound becomes $x=1$} \\
+                        &= np \sum^n_{x=1} \dfrac{(n-1)!}{(x-1)!(n-x)!} \times p^{x-1}(1-p)^{n-x} && \text{Take of factor of $np$ and cancel $x$ with $x!$} \\
+                        &= np \sum^{n-1}_{y=0} \dfrac{(n-1)!}{y!(n-y-1)!} \times p^y(1-p)^{n-y-1} && \text{Substitute $y=1$} \\
+                        &= np \sum^{n-1}_{x=1} B(n-1, p) && \text{The expression is the equivilent of $B(n-1, p)$} \\
+                        &= np && \text{Sum of all binomial terms = 1}
+                \end{align*}
+
+            \subsubsection{Proof of $\sigma^2 = n(n-1)p$ for the Binomial distribution}
+                \begin{align*}
+                    E(X(X-1)) &= E(X^2) - E(X)                  && \text{Expand}\\
+                              &= E(X^2) - np                    \\
+                              &= E(X^2) - E(X)^2 + E(E)^2 - np  && \text{The trick is to add and subtract $E(X)^2$}\\
+                              &= \sigma^2 + n^2p^2 - np     \\            
+                     \sigma^2 &= E(X(X-1)) - n^2p^2 + np
+                    \\\\\\
+                    E(X(X-1)) &= \sum^n_{x=0} x \times (x-1) \times \dfrac{n!}{x!(n-x)!} \times p^x(1-p)^{n-x} \\
+                              &= \sum^n_{x=2} x \times (x-1) \times \dfrac{n!}{x!(n-x)!} \times p^x(1-p)^{n-x} && \text{Value at 0 and 1 is 0 so lower limit becomes $x=2$} \\
+                              &= n(n-1)p^2 \sum^n_{x=2} \dfrac{(n-2)!}{(x-2)!(n-x)!} \times p^{x-2}(1-p)^{n-x} && \text{Take out a factor of $n(n-1)p^2$ and cancel $x(x-1)$} \\
+                              &= n(n-1)p^2 \sum^{n-2}_{y=0} \dfrac{(n-2)!}{y!(n-2-y)!} \times p^y(1-p)^{n-2-y} && \text{Substitute $y=x-2$} \\
+                              &= n(n-1)p^2 \sum^{n-2}_{x=2} B(n-2, p) && \text{The expression is the equivilent of $B(n-2, p)$} \\
+                              &= n(n-1)p^2 && \text{Sum of all binomial terms = 1}
+                    \\\\\\
+                    \sigma^2 &= E(X(X-1)) - n^2p^2 + np \\
+                             &= n(n-1)p^2 - n^2p^2 + np && \text{Substiute in the value we derived above} \\
+                             &= n^2p^2 - np^2 - n^2p^2 + np \\
+                             &= np - np^2   \\
+                             &= np(1-p)
+                \end{align*}
+
+            \subsubsection{Proof of $\mu=\lambda$ for the Poisson distribution}
+                \begin{align*}
+                    \mu &= \sum x_i p_i \\
+                        &= \sum_{x=0}^\infty x \dfrac{e^{-\lambda}\times\lambda^{x}}{x!} \\
+                        &= \sum_{x=1}^\infty x \dfrac{e^{-\lambda}\times\lambda^{x}}{x!} && \text{Value at 0 is 0 so lower limit becomes $x=1$} \\
+                        &= \lambda \sum_{x=1}^\infty \dfrac{e^{-\lambda}\times\lambda^{x-1}}{(x-1)!} && \text{Factor out $\lambda$ and cancel out $x$} \\
+                        &= \lambda \sum_{y=0}^\infty \dfrac{e^{-\lambda}\times\lambda^{y}}{y!} && \text{Substitute $y = x - 1$} \\
+                        &= \lambda && \text{Sum of all poisson terms = 1}
+                \end{align*}
+
+            \subsubsection{Proof of $\sigma^2=\lambda$}
+                \begin{align*}
+                    E(X(X-1)) &= E(X^2) - E(X)                  && \text{Expand}\\
+                              &= E(X^2) - \lambda                    \\
+                              &= E(X^2) - E(X)^2 + E(E)^2 - \lambda  && \text{The trick is to add and subtract $E(X)^2$}\\
+                              &= \sigma^2 + \lambda^2 - \lambda     \\            
+                     \sigma^2 &= E(X(X-1)) - \lambda^2 + \lambda
+                    \\\\\\
+                    E(X(X-1)) &= \sum^\infty_{x=0} x(x-1) \dfrac{e^-\lambda \times \lambda^x}{x!} \\
+                              &= \sum^\infty_{x=2} x(x-1) \dfrac{e^-\lambda \times \lambda^x}{x!} && \text{Value at 0 and 1 is zero so lower limit becomes $x=2$}\\
+                              &= \lambda^2 \sum^\infty_{x=2} \dfrac{e^-\lambda \times \lambda^{(x-2)}}{(x-2)!} && \text{Factor out $\lambda^2$ and cancel $x(x-1)$} \\
+                              &= \lambda^2 \sum^\infty_{y=0} \dfrac{e^-\lambda \times \lambda^y}{y!} && \text{Substitute $y=x-2$} \\
+                              &= \lambda^2 && \text{Sum of poisson terms = 1}
+                    \\\\\\
+                    \sigma^2 &= \lambda^2 - \lambda^2 + \lambda \\
+                             &= \lambda
+                \end{align*}
+
+        \subsection{Approximating binomial using the Possion distribution}
+            (See SS04 Approximating binomial using the Possion distribution)
+
+        \subsection{Approximating binomial using the normal distribution}
+            (See SS04 Approximating binomial using the normal distribution)
+
+        \subsection{Approximating Possion using the normal distribution}
+            (See SS04 Approximating Possion using the normal distribution)
+
+
+    \section{Estimation}
+        \subsection{Estimation of sample sizes to achieve required width confidence interval}
+            (Couldnt find any questions, probably simple though)
+        \subsection{Confindence interval for the diffrence between means of two normal random variables}
+            As simple as:
+            $$
+            \bar{x} - \bar{y} \pm z \sqrt{\dfrac{s^2_x}{n_x} + \dfrac{s^2_y}{n_y}}
+            $$
+            (May require approximation)
+
+            \begin{example}
+            {
+                A sample of 50 male Eastern Grey kangaroos had a mean weight of 42.6 kg and a standard deviation of 6.2 kg.
+                \\\\
+                A sample of 50 male Western Grey kangaroos had a mean weight of 39.7 kg and a standard deviation of 5.3 kg.
+                \\\\
+                Construct a 98\% confidence interval for the difference between the mean weight of male Eastern Grey kangaroos and that of male Western Grey kangaroos.
+            }
+                \begin{step}{Construct the confidence interval}
+                    \begin{align*}
+                        42.6 - 39.7 \pm 2.3263 \times \sqrt{\dfrac{6.2^2}{50} + \dfrac{5.3^2}{50}} &= (0.217, 5.58)
+                    \end{align*}
+                \end{step}
+            \end{example}
+
+        \subsection{Mean and variance of sample proportion}
+            The mean and variance of a sample proportion is as follows:
+            $$\mu = p$$
+            $$\sigma^2 = \dfrac{p(1-p)}{n}$$
+
+        \subsection{Unbiased estimator of population proportion}
+            $$\hat{p} = \frac{x}{n}$$
+
+        \subsection{Approximating sample proportion using the normal approximation}
+            \begin{example}
+            {
+                Of 480 men polled, 264 voted Yes and of 500 women polled, 220 voted Yes.
+            }
+
+                \begin{step}{Construct a 95\% confidence interval for the diffrence between the proportion of men and women who voted Yes}
+                    \begin{align*}
+                        \hat{p}_m &= \frac{264}{480} = 0.55                                     \\
+                        \hat{p}_w &= \frac{220}{500} = 0.44                                     \\
+                        M &\sim N(0.55, \dfrac{0.55 \times 0.45}{480}) \sim N(0.55, 0.000516)   \\
+                        W &\sim N(0.44, \dfrac{0.44 \times 0.55}{500}) \sim N(0.44, 0.000493)
+                    \end{align*}
+
+                    $$(0.55 - 0.44) \pm 1.96 \times \sqrt{0.000516 + 0.000493} = (0.048, 0.172)$$
+                \end{step}
+
+                \begin{step}{Comment on the claim that men voted yes exceeded the percentage of women who voted yes by 2.5\%}
+                    The confidence interval is greater than 2.5\%, so their is evidence to support the claim.
+                \end{step}
+            \end{example}
+        
+        \subsection{Confindence interval for population proportion}
+            As you would exspect:
+            $$
+            \hat{p} \pm z \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+            $$
+
+            \begin{example}
+            {
+                23 out of a sample of 200 pens fail to write.
+            }
+
+            \begin{step}{Calculate an approximate 96\% confidence interval of pens that fail to write.}
+                $$\hat{p} = \frac{23}{200} = 0.115$$
+                \begin{align*}
+                    0.115 \pm 2.0537 \times \sqrt{\dfrac{0.115 \times (1-0.115)}{200}} = (0.069, 0.161)
+                \end{align*}
+            \end{step}
+
+            \begin{step}{Comment on the claim that at most 2 in 50 pens fail.}
+                $\dfrac{2}{50} = 0.04$, 0.04 is less than the confidence interval, so their is evidence to reject their claim
+            \end{step}
+
+            \end{example}
+
+        \subsection{Confindence interval for mean of poisson distributions}
+            (See SS04 Confindence intervals for Possion)
+
+        \subsection{Confindence interval for the diffrence in poisson distribution means}
+            $$(\lambda_x - \lambda_y) \pm z \times \sqrt{\lambda_x + \lambda_y}$$
+
+            \begin{example}
+            {
+                In a sample of 26 weeks, 507 orders were received on Monday, and 416 orders were received on Friday.
+            }
+
+            \begin{step}{Construct a 99\% approximate confidence interval for $\lambda_M - \lambda_F$ where $\lambda_M$ and $\lambda_F$ represent the daily number of orders}
+                $$(507-416) \pm 2.5758 \times \sqrt{507+416} = (12.7, 169.3)$$
+                $$\dfrac{(12.7, 169.3)}{26} = (0.49, 6.51)$$
+
+            \end{step}
+
+            \begin{step}{Comment on the belief that more orders are received on mondays than fridays}
+                Confindence interval is above 0, therefore the belief is justified.
+            \end{step}
+
+            \end{example}
+
+    \section{Hypothesis Testing}
+        \subsection{Power of a test}
+            The power of a test is the probability of rejecting the null hypothesis, when the null hypothesis is false.The power of a test is the probability of rejecting the null hypothesis, when the null hypothesis is false.
+
+        \subsection{Test for diffrence between means of two normal distributions}
+            (Including approximation)
+        \subsection{Test for population proportion and for mean of a poisson distribution}
+        \subsection{Test for diffrence between population proportions and means of a poisson distribution}
+        \subsection{Test $H_0: \rho = 0$ for a bivariate normal population}
