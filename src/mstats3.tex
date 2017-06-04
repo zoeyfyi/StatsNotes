@@ -290,10 +290,49 @@
 
     \section{Hypothesis Testing}
         \subsection{Power of a test}
-            The power of a test is the probability of rejecting the null hypothesis, when the null hypothesis is false.The power of a test is the probability of rejecting the null hypothesis, when the null hypothesis is false.
+            The power of a test is the probability of rejecting the null hypothesis, when the null hypothesis is false. The power of a test is the probability of rejecting the null hypothesis, when the null hypothesis is false. This can be expressed as:
+            \\
+            $$1 - P(\text{Type II Error})$$
+            \\
+            To find the probability of a Type II error, consider the following hypothesis:
+            \begin{align*}
+            H_0&: \mu = 50   \\
+            H_1&: \mu \leq 50
+            \end{align*}
+            To find the probability of a type II error, we need to find the values of the test statistic were we reject $H_0$.\\
+            \begin{align*}
+                -1.34 &= \dfrac{\bar{X}-50}{\dfrac{21}{\sqrt{36}}} \\
+                        &= 45.31
+            \end{align*}
+            So we reject $H_0$ when $\bar{X} \leq 45.31$. If $\mu = 43$ what is $P(\text{Type II error})$. So we need to find $P(\text{Accepting } H_0 | H_0 \text{ is false})$, thus:
+            \begin{align*}
+            P(\bar{X} > 45.31 | \mu = 43) &= 1 - \phi\left(\dfrac{45.31 - 43}{\dfrac{21}{\sqrt{36}}}\right) \\
+                                          &= 0.255
+            \end{align*}
+            So the power of the test would be $1 - 0.255 = 0.745$.
+
+
+            %  of accepting $H_0$ given the $\mu = 26$. If the signifcance level of the test is $0.09$ then the critical value would be $-1.34$, and we will let the $\sigma=21$ and $n=36$.
+
+            % Now we need to find the value of the test statistic in which we reject the null hypothesis:
+            % Si
+            
 
         \subsection{Test for diffrence between means of two normal distributions}
-            (Including approximation)
-        \subsection{Test for population proportion and for mean of a poisson distribution}
-        \subsection{Test for diffrence between population proportions and means of a poisson distribution}
+            (See SS05 Test for diffrence in means) (Including normal approximations)
+
+        \subsection{Test for population proportion}
+            (See SS04 Test for proportion)
+
+        \subsection{Test for mean of a poisson distribution}
+            (See SS04 Poisson hypothesis test)
+
+        \subsection{Test for diffrence between population proportions and means of two poisson distribution}
+            We use a normal approximation to test the difference between population proportions and means of a two poisson distribution, pooling their variances when $H_0$ is true.
+            \\\\
+            For example if $p_1 = \dfrac{205}{250}$ and $p_2 = \dfrac{137}{250}$ and $H_0: p_1 = p_2$, then $\hat{p} = \dfrac{205+137}{250+250} = \dfrac{342}{500} = \dfrac{171}{250}$
+            \\\\
+            (Couldnt find any questions on this)
+        
         \subsection{Test $H_0: \rho = 0$ for a bivariate normal population}
+            (See SS03 Testing the correlation coefficent)
